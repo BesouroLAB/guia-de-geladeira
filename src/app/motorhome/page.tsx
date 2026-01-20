@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Caravan, ChevronRight, Star, Filter, ArrowDownWideNarrow, Sun, BatteryCharging } from 'lucide-react';
 import { ScrewHead } from '@/components/ui/ScrewHead';
@@ -23,7 +24,14 @@ export default function MotorhomePage() {
 
             {/* Hero Section - Cluster Specific */}
             <section className="relative bg-teal-900 text-white pt-20 pb-40 overflow-hidden">
-                <div className="absolute inset-0 bg-[url('/img/motorhome-hero.png')] bg-cover bg-center opacity-40 transform scale-105"></div>
+                <Image
+                    src="/img/motorhome-hero.png"
+                    alt="Motorhome na natureza"
+                    fill
+                    priority
+                    className="object-cover object-center opacity-40 transform scale-105"
+                    sizes="100vw"
+                />
                 <div className="absolute inset-0 bg-gradient-to-b from-teal-900/10 via-slate-950/20 to-slate-50"></div>
                 <div className="absolute inset-0 bg-diamond-plate opacity-5 pointer-events-none"></div>
 

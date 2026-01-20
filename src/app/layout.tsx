@@ -33,7 +33,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className="light">
+    <html lang="pt-BR" className="light" style={{ scrollBehavior: 'smooth' }}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body
         className={`${inter.variable} ${teko.variable} antialiased bg-slate-50 text-slate-900 font-sans`}
       >

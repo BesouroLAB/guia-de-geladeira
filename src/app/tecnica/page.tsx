@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { BatteryMedium, ChevronRight, Zap, Info, ShieldCheck, Sun, Lightbulb, ZapOff } from 'lucide-react';
 import { getAllPosts } from '@/lib/posts';
@@ -21,7 +22,14 @@ export default function TecnicaPage() {
 
             {/* Hero Section */}
             <section className="relative pt-20 pb-32 overflow-hidden bg-slate-900 text-white border-b-4 border-amber-500">
-                <div className="absolute inset-0 bg-[url('/img/tecnica-hero.png')] bg-cover bg-center opacity-30 transform scale-110 grayscale-[0.5]"></div>
+                <Image
+                    src="/img/tecnica-hero.png"
+                    alt="Esquema técnico e manutenção"
+                    fill
+                    priority
+                    className="object-cover object-center opacity-30 transform scale-110 grayscale-[0.5]"
+                    sizes="100vw"
+                />
                 <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 via-slate-950/30 to-slate-900"></div>
                 <div className="absolute inset-0 bg-diamond-plate opacity-5"></div>
 

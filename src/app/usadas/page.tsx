@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { ShoppingBag, ChevronRight, Star, Filter, ArrowDownWideNarrow, Search, AlertTriangle } from 'lucide-react';
 import { ScrewHead } from '@/components/ui/ScrewHead';
@@ -23,7 +24,14 @@ export default function UsadasPage() {
 
             {/* Hero Section - Cluster Specific */}
             <section className="relative bg-orange-900 text-white pt-20 pb-40 overflow-hidden">
-                <div className="absolute inset-0 bg-[url('/img/usadas-hero.png')] bg-cover bg-center opacity-40 transform scale-105"></div>
+                <Image
+                    src="/img/usadas-hero.png"
+                    alt="Pátio com caminhões"
+                    fill
+                    priority
+                    className="object-cover object-center opacity-40 transform scale-105"
+                    sizes="100vw"
+                />
                 <div className="absolute inset-0 bg-gradient-to-b from-orange-900/10 via-slate-950/20 to-slate-50"></div>
                 <div className="absolute inset-0 bg-diamond-plate opacity-5 pointer-events-none"></div>
 

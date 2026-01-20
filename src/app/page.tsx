@@ -110,9 +110,9 @@ export default function Home() {
             alt="Interior de caminhão na estrada"
             fill
             priority
-            quality={90}
+            quality={85}
             className="object-cover object-center opacity-60 scale-105"
-            sizes="100vw"
+            sizes="(max-width: 768px) 100vw, 1920px"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 via-slate-950/20 to-slate-900"></div>

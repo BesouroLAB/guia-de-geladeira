@@ -11,8 +11,10 @@ export function Footer() {
                     src="/img/footer-bg.png"
                     alt=""
                     fill
+                    quality={50}
                     className="object-cover object-center opacity-10 grayscale"
-                    sizes="100vw"
+                    sizes="(max-width: 768px) 100vw, 1200px"
+                    loading="lazy"
                 />
             </div>
             <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 to-slate-950"></div>

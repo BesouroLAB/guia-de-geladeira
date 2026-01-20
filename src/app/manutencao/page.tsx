@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Wrench, ChevronRight, AlertTriangle, Cog, Info, FileText, Settings, Zap } from 'lucide-react';
 import { ScrewHead } from '@/components/ui/ScrewHead';
@@ -22,7 +23,14 @@ export default function ManutencaoPage() {
 
             {/* Hero Section - SOS Style */}
             <section className="relative pt-20 pb-32 overflow-hidden border-b-8 border-red-600 bg-slate-900">
-                <div className="absolute inset-0 bg-[url('/img/manutencao-hero.png')] bg-cover bg-center opacity-30 grayscale transform scale-105"></div>
+                <Image
+                    src="/img/manutencao-hero.png"
+                    alt="Manutenção de geladeira"
+                    fill
+                    priority
+                    className="object-cover object-center opacity-30 grayscale transform scale-105"
+                    sizes="100vw"
+                />
                 <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 via-slate-950/30 to-slate-950"></div>
                 <div className="absolute inset-0 bg-diamond-plate opacity-[0.03]"></div>
                 <div className="container mx-auto px-6 relative z-10">

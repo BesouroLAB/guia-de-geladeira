@@ -20,7 +20,7 @@ export function Footer() {
                     <div className="md:col-span-5 space-y-6">
                         <Logo light className="scale-110 origin-left" />
                         <p className="text-slate-300 text-sm leading-relaxed max-w-sm">
-                            A autoridade definitiva em refrigeração automotiva no Brasil. Testamos o equipamento no limite para você não ficar na mão no trecho.
+                            O seu guia independente especializado em refrigeração automotiva. Analisamos fichas técnicas, custo-benefício e a "rádio-peão" para você investir o seu QSJ com segurança no trecho.
                         </p>
                         <div className="flex items-center gap-6 pt-4">
                             <Link href="#" className="w-10 h-10 rounded-lg bg-slate-900 flex items-center justify-center border border-white/10 hover:border-amber-500 hover:text-amber-500 transition-all">

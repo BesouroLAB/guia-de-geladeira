@@ -16,10 +16,14 @@ const teko = Teko({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://guiadegeladeira.com.br'),
   title: "Guia de Geladeira de Caminhão: Reviews, Instalação e Ofertas (2026)",
   description: "O maior portal de refrigeração automotiva. Reviews técnicos da Resfriar, Elber e Maxiclima. Aprenda a instalar, consertar e economizar bateria.",
   verification: {
     google: "iC93wur6Np56TI-uw7FXtBiIIEG1zLUlqyEBaGQiYmU",
+  },
+  alternates: {
+    canonical: '/',
   },
 };
 

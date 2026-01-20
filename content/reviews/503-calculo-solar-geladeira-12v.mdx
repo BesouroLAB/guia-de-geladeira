@@ -1,0 +1,85 @@
+---
+id: 503
+title: "Kit Energia Solar para Geladeira 12v: O Guia de Dimensionamento"
+excerpt: "Quantas placas e baterias eu preciso? Aprenda a calcular o seu sistema elétrico para ter autonomia infinita na estrada."
+date: "2026-01-20"
+cluster: "motorhome"
+author: "Equipe GuiaDeGeladeira"
+coverImage: "/img/reviews/503-hero.png"
+tags: ["Energia Solar", "Bateria Estacionária", "Controlador MPPT", "Cálculo", "DIY"]
+rating: "10.0"
+brand: "Guia Técnico"
+model: "Dimensionamento Elétrico"
+price: "Free"
+---
+
+import { AlertBox } from '@/components/industrial/AlertBox'
+import { HazardButton } from '@/components/industrial/HazardButton'
+import { TechSpecs } from '@/components/industrial/TechSpecs'
+
+{/* --- INTRODUÇÃO --- */}
+
+A pergunta que mais recebemos: *"Uma placa de 150W toca uma geladeira Resfriar?"*
+
+A resposta curta é: **Sim**.
+A resposta longa (e segura) depende de onde você mora, quanto sol faz e se você também carrega notebook e usa luzes.
+
+Neste guia, vamos te dar a **Receita de Bolo** para um sistema elétrico básico de Motorhome que rode geladeira 24h por dia sem falhar.
+
+---
+
+## O Consumo da Geladeira 12v
+
+Primeiro, vamos aos números reais (não os de manual). Uma geladeira 12v de 31 a 45 litros consome, em média:
+
+*   **Ligada (Compressor rodando):** 3.5 Amperes.
+*   **Ciclo de Trabalho:** Ela fica ligada cerca de 30% do tempo (20 min por hora).
+*   **Média Hora:** ~1.2 Ah (Amperes-hora).
+*   **Total Dia (24h):** ~28 Ah a 35 Ah.
+
+---
+
+## O Kit Básico "Sem Dor de Cabeça"
+
+Para repor esses 35Ah diários e ainda ter uma gordura de segurança para dias nublados, você precisa de:
+
+### 1. A Bateria (O Tanque)
+Recomendamos Bateria Estacionária (Freedom, Moura Solar) de Ciclo Profundo.
+*   **Mínimo:** 100Ah ou 115Ah.
+*   *Por que?* Você não deve descarregar mais de 30-40% da bateria para ela durar anos. 40% de 100Ah = 40Ah. Cobre exatamente o consumo diário da geladeira.
+
+### 2. A Placa Solar (A Torneira)
+*   **Mínimo:** 1 Painel de 150W (ou 155W).
+*   *Conta rápida:* Uma placa de 150W gera cerca de 8 Amperes no pico do sol. Com 5 horas de sol pleno (insolação média Brasil), ela gera 40Ah. Conta fechada!
+
+### 3. O Controlador de Carga (O Cérebro)
+*   **Tipo:** MPPT (Obrigatório). Esqueça PWM.
+*   **Modelo:** 20A ou 30A (Epever é o padrão ouro). O MPPT aproveita 30% mais energia que o PWM, essencial em dias nublados.
+
+---
+
+## Cenários de Uso
+
+<TechSpecs 
+  data={[
+    { label: "Cenário 1: Só Geladeira + Luz LED", value: "Placa 150W + Bateria 115Ah + MPPT 20A" },
+    { label: "Cenário 2: + Notebook + Ventilador", value: "Placa 300W (2x150) + Bateria 220Ah + MPPT 30A" },
+    { label: "Cenário 3: + Climatizador 12v", value: "Placa 450W + Bateria 400Ah (Uso intenso)" }
+  ]}
+/>
+
+---
+
+<AlertBox type="warning" title="Dica de Ouro sobre Cabos">
+Não economize no fio que vai da placa ao controlador e do controlador à bateria. Use cabos de **6mm²** se a distância for curta (até 3m) ou **10mm²** se for maior. Fio fino esquenta e joga energia fora.
+</AlertBox>
+
+## Conclusão
+
+Para começar seu projeto com uma geladeira **Resfriar 31L** ou **Elber 65L**, o kit **150W Solar + 115Ah Bateria** é o setup perfeito de entrada. É barato, fácil de instalar e garante sua cerveja gelada 24h por dia.
+
+<HazardButton 
+  text="VER KITS SOLARES COMPLETOS" 
+  link="https://amazon.com.br/..." 
+  size="large"
+/>

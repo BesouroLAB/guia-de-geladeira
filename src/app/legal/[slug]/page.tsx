@@ -58,6 +58,10 @@ export async function generateMetadata({ params }: LegalPageProps): Promise<Meta
     return {
         title: `${page.title} | Guia de Geladeira`,
         description: page.description,
+        robots: {
+            index: false,
+            follow: true,
+        },
     };
 }
 

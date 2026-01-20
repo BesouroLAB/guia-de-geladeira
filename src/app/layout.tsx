@@ -17,7 +17,6 @@ const teko = Teko({
 export const metadata: Metadata = {
   title: "Guia de Geladeira de Caminhão: Reviews, Instalação e Ofertas (2026)",
   description: "O maior portal de refrigeração automotiva. Reviews técnicos da Resfriar, Elber e Maxiclima. Aprenda a instalar, consertar e economizar bateria.",
-  robots: "noindex, nofollow",
 };
 
 export default function RootLayout({

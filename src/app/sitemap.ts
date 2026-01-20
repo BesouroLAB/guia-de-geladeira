@@ -9,13 +9,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '',
         '/caminhao',
         '/portatil',
+        '/motorhome',
+        '/usadas',
         '/tecnica',
         '/manutencao',
         '/ofertas',
         '/categorias',
-        '/legal/sobre',
-        '/legal/termos-de-uso',
-        '/legal/politica-de-privacidade',
+        '/glossario',
     ].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date(),
@@ -24,7 +24,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
 
     // Dynamic routes from cluster articles
-    const clusters = ['caminhao', 'portatil', 'tecnica', 'manutencao'];
     const posts = getAllPosts('reviews');
 
     const blogRoutes = posts.map((post) => ({

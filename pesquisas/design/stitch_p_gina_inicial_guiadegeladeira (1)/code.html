@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GuiaDeGeladeira.com.br - Blog: Economizar Bateria</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#FFAA00", // Trator Yellow
+              "asphalt-dark": "#1A1C20", // Dark Asphalt Gray
+              "asphalt-light": "#2C2E33", // Lighter Asphalt Gray
+              "background-light": "#F5F5F7", // Off-white for light mode content
+              "background-dark": "#121212", // Very dark grey for dark mode
+              "metal-border": "#4A4D55", // Metallic border color
+            },
+            fontFamily: {
+              display: ["Teko", "sans-serif"], // Industrial condensed font
+              body: ["Roboto", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "4px", // Slight rounding, mostly industrial/square feel
+              'xl': '12px',
+            },
+            backgroundImage: {
+              'diamond-plate': "url('data:image/svg+xml,%3Csvg width=\\'20\\' height=\\'12\\' viewBox=\\'0 0 20 12\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cpath d=\\'M6 12c0-.622-.095-1.221-.27-1.785A5.982 5.982 0 0 0 0 12h6zm10 0c0-.622.095-1.221.27-1.785A5.982 5.982 0 0 1 20 12h-6zM6 0c0 .622-.095 1.221-.27 1.785A5.982 5.982 0 0 1 0 0h6zm10 0c0 .622.095 1.221.27 1.785A5.982 5.982 0 0 0 20 0h-6z\\' fill=\\'%23000000\\' fill-opacity=\\'0.2\\' fill-rule=\\'evenodd\\'/%3E%3C/svg%3E')",
+              'carbon-fiber': "url('data:image/svg+xml,%3Csvg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'4\\' height=\\'4\\' viewBox=\\'0 0 4 4\\'%3E%3Cpath fill=\\'%23000000\\' fill-opacity=\\'0.4\\' d=\\'M1 3h1v1H1V3zm2-2h1v1H3V1z\\'/%3E%3C/svg%3E')",
+            }
+          },
+        },
+      };
+    </script>
+<style>.industrial-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+        }
+        .inset-metal {
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.6);
+        }
+        .screw-head {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #5a5a5a;
+            box-shadow: inset 1px 1px 1px rgba(255,255,255,0.2), 1px 1px 2px rgba(0,0,0,0.5);
+            position: absolute;
+            z-index: 10;
+        }
+        .screw-head::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60%;
+            height: 1px;
+            background: #222;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        .screw-head::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60%;
+            height: 1px;
+            background: #222;
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-body antialiased text-gray-800 dark:text-gray-100 min-h-screen flex flex-col">
+<header class="sticky top-0 z-50 w-full industrial-shadow border-b-4 border-primary">
+<div class="bg-asphalt-dark bg-diamond-plate relative px-4 py-4 flex items-center justify-between">
+<div class="screw-head top-2 left-2"></div>
+<div class="screw-head top-2 right-2"></div>
+<div class="screw-head bottom-2 left-2"></div>
+<div class="screw-head bottom-2 right-2"></div>
+<div class="flex items-center gap-3 relative z-10">
+<button class="text-white hover:text-primary transition-colors focus:outline-none">
+<span class="material-icons text-3xl">menu</span>
+</button>
+<div class="flex flex-col">
+<h1 class="font-display font-bold text-2xl tracking-widest text-white uppercase leading-none" style="text-shadow: 2px 2px 0px #000;">
+                        Guia de <span class="text-primary">Geladeira</span>
+</h1>
+<span class="text-[10px] text-gray-400 uppercase tracking-widest font-display">Equipamento Pesado &amp; Acessórios</span>
+</div>
+</div>
+<div class="relative z-10 flex gap-4">
+<button class="bg-asphalt-light rounded border border-gray-600 p-2 flex items-center justify-center shadow-lg active:translate-y-0.5 active:shadow-none transition-all">
+<span class="material-icons text-primary text-xl">search</span>
+</button>
+<button class="bg-primary rounded text-asphalt-dark font-bold p-2 flex items-center justify-center shadow-lg active:translate-y-0.5 active:shadow-none transition-all">
+<span class="material-icons text-xl">shopping_cart</span>
+</button>
+</div>
+</div>
+</header>
+<section class="relative w-full bg-asphalt-dark overflow-hidden inset-metal border-b border-gray-700">
+<div class="absolute inset-0 bg-diamond-plate opacity-20 z-0"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-asphalt-dark via-asphalt-dark/90 to-transparent z-10"></div>
+<img alt="Interior de caminhão" class="absolute right-0 top-0 h-full w-2/3 object-cover opacity-40 mix-blend-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP6gZ1zuOsJzZnBBBJeKSLXvUFffXsHl7bw9XAmYY4H7did4HpYnWslmnalrzM_Yvtwah4COzArsgfmX-c59YilKmXfmJt8GHW4EcHglA2xuCjrp0qD64hu7sCd5x8QC75rA5pXTjTauhQpLOqy5_gQ0ToODGmzE8Ac25EzemBkpwucntXgGGLGhGhhSqz93PWs_DlhU8rPrLKYm7OMMnH7Vl_d0cGCFQ6TyHDMFqce55yHgBYjWVRfN1XSqP4tSCh5dH_yt7jf4Y"/>
+<div class="relative z-20 px-6 py-8">
+<div class="flex items-center gap-2 mb-4">
+<span class="bg-primary text-asphalt-dark text-[10px] font-bold px-2 py-0.5 uppercase tracking-wide rounded-sm font-display">Manutenção</span>
+<span class="text-gray-400 text-xs font-display tracking-wider uppercase">14 Min de Leitura</span>
+</div>
+<h1 class="text-3xl md:text-4xl font-display font-bold text-white uppercase leading-none mb-4 drop-shadow-lg max-w-[90%]">
+            Como economizar bateria com a geladeira ligada
+        </h1>
+<div class="flex items-center gap-2 text-gray-400 text-sm">
+<span class="material-icons text-primary text-sm">calendar_today</span>
+<span>12 OUT, 2023</span>
+</div>
+</div>
+</section>
+<main class="flex-grow bg-white text-gray-800 relative z-10">
+<article class="px-6 py-8">
+<p class="text-lg font-medium text-gray-900 mb-6 leading-relaxed border-l-4 border-primary pl-4">
+            Manter a carga na estrada é essencial. Ninguém quer acordar no meio do nada com o caminhão sem partida porque a geladeira drenou tudo durante a noite.
+        </p>
+<p class="text-gray-700 mb-8 leading-relaxed">
+            A eficiência energética dentro da cabine não é apenas sobre economia de combustível, é sobre segurança e autonomia. Quando o motor para, sua geladeira se torna o maior consumidor de energia. Separamos dicas brutas e diretas para você manter sua comida gelada e seu motor pronto para rodar na manhã seguinte.
+        </p>
+<div class="mb-10">
+<h2 class="text-2xl font-display font-bold text-asphalt-dark uppercase mb-6 flex items-center">
+<span class="w-2 h-8 bg-asphalt-dark mr-3"></span>
+                Protocolo de Economia
+            </h2>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 bg-asphalt-dark rounded flex items-center justify-center border-2 border-gray-300 shadow-md">
+<span class="material-icons text-primary text-xl">settings</span>
+</div>
+<div>
+<h3 class="text-lg font-bold font-display text-asphalt-dark uppercase tracking-wide mb-1">Pré-resfriamento é Lei</h3>
+<p class="text-sm text-gray-600 leading-snug">Ligue a geladeira na tomada de casa (110v/220v) antes de sair para a viagem. O compressor trabalha muito menos para manter a temperatura do que para baixá-la do zero.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 bg-asphalt-dark rounded flex items-center justify-center border-2 border-gray-300 shadow-md">
+<span class="material-icons text-primary text-xl">settings</span>
+</div>
+<div>
+<h3 class="text-lg font-bold font-display text-asphalt-dark uppercase tracking-wide mb-1">Verifique a Vedação</h3>
+<p class="text-sm text-gray-600 leading-snug">A borracha da porta resseca com o tempo. Faça o teste da folha de papel: se conseguir puxar uma folha presa na porta sem resistência, você está jogando energia fora.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 bg-asphalt-dark rounded flex items-center justify-center border-2 border-gray-300 shadow-md">
+<span class="material-icons text-primary text-xl">settings</span>
+</div>
+<div>
+<h3 class="text-lg font-bold font-display text-asphalt-dark uppercase tracking-wide mb-1">Ajuste de Voltagem (Cut-out)</h3>
+<p class="text-sm text-gray-600 leading-snug">Configure o protetor de bateria da sua geladeira para o modo "High". Isso faz ela desligar antes que a voltagem da bateria caia a ponto de impedir a partida do motor.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 bg-asphalt-dark rounded flex items-center justify-center border-2 border-gray-300 shadow-md">
+<span class="material-icons text-primary text-xl">settings</span>
+</div>
+<div>
+<h3 class="text-lg font-bold font-display text-asphalt-dark uppercase tracking-wide mb-1">Circulação de Ar</h3>
+<p class="text-sm text-gray-600 leading-snug">Nunca bloqueie as saídas de ar do compressor com roupas ou bolsas. O superaquecimento força o motor a trabalhar o dobro.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="bg-gray-100 border-2 border-dashed border-gray-300 rounded-sm p-5 flex flex-col items-center text-center relative mt-12">
+<div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-asphalt-dark text-[10px] font-bold px-3 py-1 uppercase tracking-widest rounded-sm shadow-sm border border-asphalt-dark z-10">
+                Especialista do Trecho
+            </div>
+<div class="w-16 h-16 rounded-full bg-asphalt-dark border-4 border-white shadow-lg overflow-hidden mb-3 relative">
+<span class="material-icons text-gray-500 text-4xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">person</span>
+</div>
+<h4 class="font-display font-bold text-xl text-asphalt-dark uppercase mb-1">Marcos "Pistão" Silva</h4>
+<p class="text-xs text-gray-500 font-medium uppercase tracking-wide mb-3">Técnico em Refrigeração &amp; Estradeiro</p>
+<p class="text-sm text-gray-600 italic">"Rodando o Brasil há 20 anos. Se faz barulho ou gela, eu conserto. Dica boa é dica testada na prática."</p>
+</div>
+</article>
+<section class="bg-background-light border-t border-gray-300 py-8 px-4">
+<h3 class="text-xl font-display font-bold text-asphalt-dark uppercase mb-5 flex items-center">
+<span class="material-icons text-primary mr-2">visibility</span>
+            Quem leu também viu
+        </h3>
+<div class="grid grid-cols-2 gap-4">
+<a class="group flex flex-col bg-white border border-gray-200 rounded-sm overflow-hidden shadow-sm hover:shadow-md transition-shadow" href="#">
+<div class="h-28 overflow-hidden relative">
+<div class="absolute inset-0 bg-asphalt-dark opacity-10 group-hover:opacity-0 transition-opacity z-10"></div>
+<img alt="Geladeira" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpjOO9R-596AK10-hDqW4-stm5Rm1PzEDunTd1k94sUoksShRZLftzjVTwptV8AIi44tQN6H9hrEV3rwAYhcKNyewXDENB7nY3dhFoXhYxsqwAW8Vlk4q2BhIqngSIX3mvHE1vS0wF2NSjINgtRkNjY_Gtlf2zDD5tU_E6PgL0syvwKf4NH91oseoJm-zIYif3Zi2BUIrrc5V_ueWbKye1DfmOcyi1CugzjZgM41Zyk27Caad7QXHUOvRNQHyZp-EuLsbi0W9N7Ds"/>
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<span class="text-[10px] font-bold text-primary uppercase mb-1">Review</span>
+<h4 class="text-xs font-bold text-gray-800 uppercase leading-tight group-hover:text-primary transition-colors">Resfriar Serie 7: Vale a pena?</h4>
+</div>
+</a>
+<a class="group flex flex-col bg-white border border-gray-200 rounded-sm overflow-hidden shadow-sm hover:shadow-md transition-shadow" href="#">
+<div class="h-28 overflow-hidden relative">
+<div class="absolute inset-0 bg-asphalt-dark opacity-10 group-hover:opacity-0 transition-opacity z-10"></div>
+<img alt="Solar" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVpbFrKrdSZWMpx2PxxQb5_T2XuMDsHrhcgaHymmIksE4sXUK6xY81GB5ShDdmhQ1CLn4Rd7j6-3Pjb_5lwgkk9PmZoy8qCEvXFxmCaQ9SK-BK9Z5TgvaMWpElHSaQYOWmv7RDiTreniBMu5HVEYtD1Cf0DpC_OV2lsucYZ4q-kvua6QyBR0EkwDMQRHR-b1N6o4Oi-xy0taveFTlYb22Rp7rBLPsON7jHjpCYD5Pe3BzpyaKFM3habsYmTZeKtZx64fcdvn08OOk"/>
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<span class="text-[10px] font-bold text-primary uppercase mb-1">Tutorial</span>
+<h4 class="text-xs font-bold text-gray-800 uppercase leading-tight group-hover:text-primary transition-colors">Instalando Kit Solar no Teto</h4>
+</div>
+</a>
+</div>
+</section>
+</main>
+<footer class="bg-asphalt-dark border-t-4 border-primary text-gray-400 py-8 px-4 relative bg-diamond-plate">
+<div class="screw-head top-2 left-2"></div>
+<div class="screw-head top-2 right-2"></div>
+<div class="grid grid-cols-2 gap-8 mb-8">
+<div>
+<h4 class="text-white font-display font-bold uppercase tracking-widest text-lg mb-4 border-b border-gray-600 pb-1">Navegação</h4>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Início</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Catálogo</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Promoções</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contato</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-display font-bold uppercase tracking-widest text-lg mb-4 border-b border-gray-600 pb-1">Ajuda</h4>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Rastreio</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Garantia</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Devoluções</a></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center pt-4 border-t border-gray-700">
+<div class="flex items-center gap-2 mb-4">
+<div class="h-8 w-8 bg-gray-700 rounded flex items-center justify-center"><span class="material-icons text-sm">facebook</span></div>
+<div class="h-8 w-8 bg-gray-700 rounded flex items-center justify-center"><span class="material-icons text-sm">photo_camera</span></div>
+<div class="h-8 w-8 bg-gray-700 rounded flex items-center justify-center"><span class="material-icons text-sm">ondemand_video</span></div>
+</div>
+<p class="text-xs text-center text-gray-500 uppercase tracking-widest">
+                 © 2023 GuiaDeGeladeira.com.br<br/>Todos os direitos reservados.
+             </p>
+</div>
+</footer>
+<nav class="sticky bottom-0 bg-asphalt-dark border-t border-gray-700 flex justify-around py-3 px-2 z-50 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.3)]">
+<a class="flex flex-col items-center text-primary group" href="#">
+<span class="material-icons text-2xl mb-1 group-hover:scale-110 transition-transform">home</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Home</span>
+</a>
+<a class="flex flex-col items-center text-gray-400 hover:text-white transition-colors group" href="#">
+<span class="material-icons text-2xl mb-1 group-hover:scale-110 transition-transform">grid_view</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Categorias</span>
+</a>
+<a class="flex flex-col items-center text-gray-400 hover:text-white transition-colors group relative" href="#">
+<div class="absolute -top-1 -right-1 bg-primary text-asphalt-dark font-bold text-[9px] w-4 h-4 rounded-full flex items-center justify-center">2</div>
+<span class="material-icons text-2xl mb-1 group-hover:scale-110 transition-transform">shopping_bag</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Carrinho</span>
+</a>
+<a class="flex flex-col items-center text-gray-400 hover:text-white transition-colors group" href="#">
+<span class="material-icons text-2xl mb-1 group-hover:scale-110 transition-transform">person</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Conta</span>
+</a>
+</nav>
+<style>.clip-corner-tr {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
+        }
+    </style>
+<script>
+        // Simple dark mode toggle for demonstration purposes (optional, as system pref usually drives this)
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
+</body></html>

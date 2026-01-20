@@ -1,0 +1,104 @@
+---
+id: 301
+title: "Como Instalar Geladeira no Caminhão: O Guia Completo (Fiação, Fusível e Ventilação)"
+excerpt: "Não perca a garantia e nem coloque fogo no seu bruto. Aprenda a bitola correta do fio e onde ligar sua geladeira 12v/24v com segurança."
+date: "2026-01-19"
+cluster: "tecnica"
+author: "Equipe GuiaDeGeladeira"
+coverImage: "/img/reviews/301-hero.png"
+tags: ["Instalação", "Elétrica", "Segurança", "Tutorial"]
+isPillar: true
+---
+
+import { AlertBox } from '@/components/industrial/AlertBox'
+import { ProsCons } from '@/components/industrial/ProsCons'
+import { HazardButton } from '@/components/industrial/HazardButton'
+
+{/* --- INTRODUÇÃO --- */}
+
+Você comprou a geladeira dos sonhos, mas na hora de ligar, ela fica desligando sozinha ou o fio esquenta? 90% dos problemas de "geladeira que não gela" não são culpa do produto, mas sim da **instalação elétrica mal feita**.
+
+Instalar uma geladeira de compressor não é igual ligar um carregador de celular. O pico de partida do motor exige corrente forte. Se o fio for fino, a energia não chega, e a geladeira entra em "Modo de Proteção".
+
+Neste guia técnico, vamos te ensinar o passo a passo para fazer uma instalação profissional, segura e que não anula a garantia do seu caminhão.
+
+---
+
+## Regra de Ouro: Esqueça o Acendedor de Cigarros
+Parece prático, mas é o maior erro. A tomada 12v/24v do painel (acendedor) foi projetada para carregar celular ou GPS (baixa amperagem).
+
+Ao ligar uma geladeira ali:
+1.  O fio original do painel é fino e esquenta (perda de energia).
+2.  A geladeira detecta "baixa voltagem" e desliga o compressor para proteger a bateria (mesmo com a bateria cheia).
+3.  Risco de derretimento do plugue e curto-circuito.
+
+<AlertBox type="danger" title="O Jeito Certo">
+Geladeira de caminhão precisa de <strong>linha direta da bateria</strong> (ou do quadro de força auxiliar) com fiação exclusiva.
+</AlertBox>
+
+---
+
+## 1. A Bitola do Fio (Espessura)
+Não economize no cobre. Fio fino gera resistência. Use a tabela abaixo baseada na distância entre a bateria e a geladeira:
+
+| Distância (Bateria até Cabine) | Bitola Mínima (24v) | Bitola Mínima (12v) |
+| :--- | :--- | :--- |
+| Até 2 metros | 4mm² | 6mm² |
+| De 2 a 5 metros | 6mm² | 10mm² |
+| Acima de 5 metros | 10mm² | 16mm² |
+
+*Dica: Na dúvida, sempre use um fio mais grosso. Fio sobrando não faz mal, fio faltando causa incêndio.*
+
+---
+
+## 2. O Fusível de Proteção
+Nunca, jamais ligue direto na bateria sem fusível. Se o fio descascar e encostar no chassi, você perde o caminhão.
+
+* **Onde colocar:** O mais próximo possível da bateria (no máximo a 15cm do polo positivo).
+* **Qual usar:** Fusível Lâmina (automotivo).
+    * Para 12v: Fusível de 15A a 20A.
+    * Para 24v: Fusível de 10A a 15A.
+
+---
+
+## 3. Conectores e Aterramento
+Não faça emendas de "torcer o fio e passar fita isolante". Com a vibração da estrada, isso solta.
+* Use **Terminais Crimpados** (olhal ou espada).
+* Use **Conector Anderson** ou plugues industriais de 2 vias se quiser que a geladeira seja removível.
+* **Aterramento (Negativo):** Pode ser feito direto no chassi do caminhão, mas lixe bem a tinta no ponto de contato para garantir o retorno perfeito.
+
+---
+
+## 4. Ventilação: O Segredo da Eficiência
+A geladeira retira o calor de dentro e joga para fora (pelas grelhas laterais). Se você encostar essas grelhas na parede do caminhão ou cobrir com cobertor, o calor volta para o motor.
+
+**Resultado:** A geladeira não gela e o motor trabalha forçado até queimar.
+**Solução:** Deixe sempre pelo menos **10cm de espaço livre** em volta das saídas de ar da geladeira.
+
+---
+
+## Resumo do Check-list de Instalação
+
+<ProsCons 
+  pros={[
+    "Fio de 6mm² ou superior (direto da bateria)",
+    "Fusível de proteção próximo ao polo positivo",
+    "Conectores bem crimpados (sem emenda de fita)",
+    "Espaço para ventilação do motor"
+  ]}
+  cons={[
+    "Ligar no acendedor de cigarros (Proibido)",
+    "Usar fio de som automotivo fino",
+    "Encostar a geladeira na parede sem ventilação"
+  ]}
+/>
+
+---
+
+## Precisa de Ajuda Profissional?
+Se você não tem alicate de crimpar ou não se sente seguro mexendo na elétrica, leve em um auto-elétrico de caminhão. O serviço é rápido (cerca de 1 hora) e garante que seu investimento de R$ 2.000,00 vai durar anos.
+
+<HazardButton 
+  text="VER FERRAMENTAS PARA INSTALAÇÃO" 
+  link="https://amazon.com.br/s?k=kit+eletrica+automotiva" 
+/>

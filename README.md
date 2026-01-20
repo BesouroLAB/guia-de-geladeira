@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚚 Guia de Geladeira (Industrial Premium)
 
-## Getting Started
+O **Guia de Geladeira** é uma plataforma de autoridade focada no nicho de refrigeração automotiva e portabilidade para o mercado brasileiro. O projeto combina um design "Hybrid Industrial Premium" com uma arquitetura de conteúdo focada em conversão, SEO avançado e performance técnica.
 
-First, run the development server:
+## 🏗️ Tech Stack
+- **Framework:** Next.js 15+ (App Router)
+- **Styling:** Tailwind CSS (Arquitetura Utilitária)
+- **Content:** MDX (Markdown for Component Era) com `next-mdx-remote`
+- **Performance:** Imagens otimizadas (AVIF/WebP), Code Splitting e Lazy Loading
+- **SEO:** JSON-LD Dinâmico, Metadados OpenGraph/Twitter e Sitemap Automático
+- **Icons:** Lucide React
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 💎 Diferenciais do Projeto
+1. **Design System Industrial:** Paleta de cores baseada em Slate e Amber, texturas de *Diamond Plate*, fontes robustas (Teko) e efeitos de micro-animação.
+2. **Arquitetura de Silos:** Conteúdo organizado em clusters estratégicos (Linha Pesada, Portáteis, Técnica e Manutenção).
+3. **Calculadora Inteligente:** Componente interativo para cálculo de litragem ideal baseado no perfil de uso do motorista.
+4. **Ofertas em Tempo Real:** Integração (simulada via API Route) com Amazon e Mercado Livre para preços atualizados e selos de oferta.
+5. **Acessibilidade (WCAG):** Conformidade com altos padrões de contraste de cor, navegação por teclado (skip-links) e suporte a Screen Readers (aria-labels).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Metas de Performance
+- **LCP:** < 1.2s
+- **CLS:** 0 (Estabilidade visual total)
+- **Accessibility Score:** 100/100 (Lighthouse)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Como Rodar Localmente
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Clone o repositório**
+   ```bash
+   git clone https://github.com/seu-usuario/guia-de-geladeira.git
+   ```
 
-## Learn More
+2. **Instale as dependências**
+   ```bash
+   npm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+3. **Rode o servidor de desenvolvimento**
+   ```bash
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **Acesse o projeto**
+   Abra `http://localhost:3000` no seu navegador. As edições nos arquivos `content/reviews/*.mdx` são refletidas instantaneamente.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Desenvolvido com foco no estradeiro brasileiro.*

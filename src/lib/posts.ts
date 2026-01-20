@@ -25,13 +25,25 @@ export function getPostBySlug(slug: string, folder: string = 'reviews'): Post | 
         const dirPath = path.join(CONTENT_PATH, folder);
         if (!fs.existsSync(dirPath)) return null;
 
-        // Procura por um arquivo que seja exatamente o slug ou que termine com -slug (para suportar prefixos numéricos 101-, 102-)
         const files = fs.readdirSync(dirPath);
-        const fileName = files.find(file =>
+
+        // 1. Tenta encontrar pelo nome do arquivo (estratégia rápida)
+        let fileName = files.find(file =>
             file === `${slug}.mdx` ||
             file.endsWith(`-${slug}.mdx`) ||
             file.replace(/^\d+-/, '').replace(/\.mdx$/, '') === slug
         );
+
+        // 2. Se não achou pelo nome, varre os arquivos procurando no frontmatter (estratégia SEO)
+        if (!fileName) {
+            fileName = files.find(file => {
+                if (!file.endsWith('.mdx')) return false;
+                const fullPath = path.join(dirPath, file);
+                const fileContents = fs.readFileSync(fullPath, 'utf8');
+                const { data } = matter(fileContents);
+                return data.slug === slug;
+            });
+        }
 
         if (!fileName) return null;
 
@@ -40,7 +52,7 @@ export function getPostBySlug(slug: string, folder: string = 'reviews'): Post | 
         const { data, content } = matter(fileContents);
 
         return {
-            slug, // Mantemos o slug original na URL
+            slug: data.slug || slug, // Prioriza o slug do frontmatter se existir
             title: data.title,
             date: data.date,
             excerpt: data.excerpt,
@@ -58,7 +70,6 @@ export function getAllPosts(folder: string = 'reviews'): Post[] {
         const dirPath = path.join(CONTENT_PATH, folder);
 
         if (!fs.existsSync(dirPath)) {
-            // Create directory if it doesn't exist to avoid crashing
             fs.mkdirSync(dirPath, { recursive: true });
             return [];
         }
@@ -68,12 +79,22 @@ export function getAllPosts(folder: string = 'reviews'): Post[] {
         const posts = files
             .filter((file) => file.endsWith('.mdx'))
             .map((file) => {
-                // Remove o prefixo numérico (ex: 101-) e a extensão .mdx para criar a slug limpa
-                const cleanSlug = file.replace(/^\d+-/, '').replace(/\.mdx$/, '');
-                return getPostBySlug(cleanSlug, folder);
+                const fullPath = path.join(dirPath, file);
+                const fileContents = fs.readFileSync(fullPath, 'utf8');
+                const { data } = matter(fileContents);
+
+                // Se tiver slug no frontmatter, usa ele. Se não, limpa o nome do arquivo.
+                const finalSlug = data.slug || file.replace(/^\d+-/, '').replace(/\.mdx$/, '');
+
+                return {
+                    slug: finalSlug,
+                    title: data.title,
+                    date: data.date,
+                    excerpt: data.excerpt,
+                    content: '', // Não precisamos do conteúdo na listagem
+                    ...data,
+                };
             })
-            // Filter out nulls and sort by date descending
-            .filter((post): post is Post => post !== null)
             .sort((a, b) => (new Date(b.date).getTime() - new Date(a.date).getTime()));
 
         return posts;

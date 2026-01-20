@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ShieldCheck, Truck, Zap, Wrench, ChevronRight, Award, Star, BatteryMedium } from 'lucide-react';
+import { ShieldCheck, Truck, Zap, Wrench, ChevronRight, Award, Star, BatteryMedium, Caravan, ShoppingBag } from 'lucide-react';
 import { BottomNav } from '@/components/ui/BottomNav';
 import { ScrewHead } from '@/components/ui/ScrewHead';
 import dynamic from 'next/dynamic';
@@ -34,6 +34,24 @@ const content = {
       link: "/portatil",
       count: "08 Reviews",
       accent: "bg-blue-500"
+    },
+    {
+      id: "motorhome",
+      title: "Motorhome",
+      desc: "Autonomia 12v para Vanlife e Camping.",
+      icon: <Caravan className="w-8 h-8 text-amber-500" />,
+      link: "/motorhome",
+      count: "05 Guias",
+      accent: "bg-teal-500"
+    },
+    {
+      id: "usadas",
+      title: "Usadas",
+      desc: "O guia anti-golpe para comprar seminovas.",
+      icon: <ShoppingBag className="w-8 h-8 text-amber-500" />,
+      link: "/usadas",
+      count: "04 Dicas",
+      accent: "bg-orange-500"
     },
     {
       id: "tecnica",
@@ -112,7 +130,7 @@ export default function Home() {
 
       {/* --- TACTICAL CLUSTER GRID --- */}
       <section className="relative z-20 px-4 -mt-20 max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {content.clusters.map((cluster) => (
             <Link key={cluster.id} href={cluster.link} className="block group h-full">
               <div className="bg-white rounded-2xl shadow-metallic border-2 border-slate-200 p-2 h-full flex flex-col transition-all group-hover:translate-y-[-8px] group-hover:border-amber-500 group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] relative overflow-hidden">

@@ -11,6 +11,8 @@ import { ScrewHead } from "@/components/ui/ScrewHead";
 import { formatDate } from "@/lib/utils";
 import { Header } from "@/components/ui/Header";
 import { Footer } from "@/components/ui/Footer";
+import { RelatedPosts } from "@/components/industrial/RelatedPosts";
+import { BestOffer } from "@/components/industrial/BestOffer";
 import { Metadata } from 'next';
 
 export async function generateMetadata({ params }: ReviewPageProps): Promise<Metadata> {
@@ -71,6 +73,11 @@ export default async function PortatilReviewPage({ params }: ReviewPageProps) {
     if (!post || post.cluster !== 'portatil') {
         notFound();
     }
+
+    const allPosts = getAllPosts('reviews');
+    const relatedPosts = allPosts
+        .filter(p => p.cluster === post.cluster && p.slug !== slug)
+        .slice(0, 3);
 
     // JSON-LD Structured Data
     const jsonLd = {
@@ -214,15 +221,20 @@ export default async function PortatilReviewPage({ params }: ReviewPageProps) {
 
                     <MDXRemote
                         source={post.content}
-                        components={MdxComponents}
+                        components={{
+                            ...MdxComponents,
+                            BestOffer,
+                        }}
                         options={{
                             mdxOptions: {
                                 remarkPlugins: [remarkGfm],
                             },
                         }}
                     />
-
                 </div>
+
+                {/* RELACIONADOS */}
+                <RelatedPosts posts={relatedPosts} currentSlug={slug} />
 
                 {/* AUTHOR BOX */}
                 <div className="mt-16 relative p-8 bg-blue-600 text-white rounded-2xl overflow-hidden shadow-2xl">

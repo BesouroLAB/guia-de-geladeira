@@ -5,6 +5,7 @@ import { HazardButton } from "../industrial/HazardButton";
 import { TechSpecs } from "../industrial/TechSpecs";
 import { PriceAlert } from "./PriceAlert"; // Keeping old one just in case
 import { LinkCard } from "../industrial/LinkCard";
+import { SlangBox } from "../industrial/SlangBox";
 import { Table, TableHead, TableBody, TableRow, TableHeader, TableCell } from "./Table";
 
 export const MdxComponents = {
@@ -15,6 +16,7 @@ export const MdxComponents = {
     TechSpecs,
     PriceAlert,
     LinkCard,
+    SlangBox,
     // Mapping standard HTML table elements to our custom components
     table: Table,
     thead: TableHead,

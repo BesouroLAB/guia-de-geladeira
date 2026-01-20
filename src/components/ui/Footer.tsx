@@ -41,8 +41,10 @@ export function Footer() {
                         <ul className="space-y-4">
                             <li><Link href="/caminhao" className="text-slate-300 hover:text-white transition-colors text-sm font-bold uppercase tracking-widest">Linha Pesada</Link></li>
                             <li><Link href="/portatil" className="text-slate-300 hover:text-white transition-colors text-sm font-bold uppercase tracking-widest">Portáteis & 12V</Link></li>
+                            <li><Link href="/motorhome" className="text-slate-300 hover:text-white transition-colors text-sm font-bold uppercase tracking-widest">Motorhome & Vanlife</Link></li>
+                            <li><Link href="/usadas" className="text-slate-300 hover:text-white transition-colors text-sm font-bold uppercase tracking-widest">Guia de Usadas</Link></li>
                             <li><Link href="/manutencao" className="text-slate-300 hover:text-white transition-colors text-sm font-bold uppercase tracking-widest">Oficina & Elétrica</Link></li>
-                            <li><Link href="/manual" className="text-slate-300 hover:text-white transition-colors text-sm font-bold uppercase tracking-widest">Manuais PDF</Link></li>
+                            <li><Link href="/glossario" className="text-slate-300 hover:text-white transition-colors text-sm font-bold uppercase tracking-widest">Glossário do Trecho</Link></li>
                         </ul>
                     </div>
 

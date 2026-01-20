@@ -13,6 +13,9 @@ export function Header() {
         { label: 'Blog', href: '/blog', desc: 'Dicas, Reviews e Notícias' },
         { label: 'Linha Pesada', href: '/caminhao', desc: 'Resfriar, Elber e Maxiclima' },
         { label: 'Portáteis', href: '/portatil', desc: 'A bateria e 12V/24V' },
+        { label: 'Motorhome', href: '/motorhome', desc: 'Vanlife e Camping' },
+        { label: 'Universo Raiz', href: '/glossario', desc: 'Gírias e Termos' },
+        { label: 'Usadas', href: '/usadas', desc: 'Guia Anti-Golpe' },
         { label: 'Guia Técnico', href: '/tecnica', desc: 'Elétrica e Instalação' },
         { label: 'Oficina', href: '/manutencao', desc: 'Esquemas e Conserto' },
     ];

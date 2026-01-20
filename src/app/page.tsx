@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { ShieldCheck, Truck, Zap, Wrench, ChevronRight, Award, Star, BatteryMedium, Caravan, ShoppingBag } from 'lucide-react';
 import { BottomNav } from '@/components/ui/BottomNav';
@@ -103,7 +104,17 @@ export default function Home() {
 
       {/* --- HERO SECTION (High Impact) --- */}
       <section className="relative bg-slate-900 text-white pt-24 pb-40 px-6 overflow-hidden border-b-8 border-slate-950">
-        <div className="absolute inset-0 bg-[url('/img/hero-bg.png')] bg-cover bg-center opacity-60 transform scale-105"></div>
+        <div className="absolute inset-0 select-none">
+          <Image
+            src="/img/hero-bg.png"
+            alt="Interior de caminhão na estrada"
+            fill
+            priority
+            quality={90}
+            className="object-cover object-center opacity-60 scale-105"
+            sizes="100vw"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 via-slate-950/20 to-slate-900"></div>
         <div className="absolute inset-0 bg-diamond-plate opacity-5 pointer-events-none"></div>
 
@@ -119,8 +130,8 @@ export default function Home() {
           </p>
 
           <Link href={content.hero.ctaLink} className="group relative inline-flex items-center justify-center px-16 py-6 text-3xl font-black text-slate-950 uppercase transition-all bg-amber-500 rounded shadow-[0_10px_0_rgb(180,83,9)] hover:shadow-[0_6px_0_rgb(180,83,9)] hover:translate-y-[4px] active:translate-y-[10px] active:shadow-none overflow-hidden font-teko tracking-widest">
-            <div className="absolute top-0 bottom-0 left-0 w-4 bg-[repeating-linear-gradient(-45deg,transparent,transparent_10px,rgba(0,0,0,0.1)_10px,rgba(0,0,0,0.1)_20px)]"></div>
-            <div className="absolute top-0 bottom-0 right-0 w-4 bg-[repeating-linear-gradient(-45deg,transparent,transparent_10px,rgba(0,0,0,0.1)_10px,rgba(0,0,0,0.1)_20px)]"></div>
+            <div className="absolute top-0 bottom-0 left-0 w-4 bg-[repeating-linear-gradient(-45deg,transparent,transparent,transparent_10px,rgba(0,0,0,0.1)_10px,rgba(0,0,0,0.1)_20px)]"></div>
+            <div className="absolute top-0 bottom-0 right-0 w-4 bg-[repeating-linear-gradient(-45deg,transparent,transparent,transparent_10px,rgba(0,0,0,0.1)_10px,rgba(0,0,0,0.1)_20px)]"></div>
             <span className="relative flex items-center gap-4">
               {content.hero.cta} <ChevronRight className="w-10 h-10 transition-transform group-hover:translate-x-2" />
             </span>
@@ -130,6 +141,9 @@ export default function Home() {
 
       {/* --- TACTICAL CLUSTER GRID --- */}
       <section className="relative z-20 px-4 -mt-20 max-w-6xl mx-auto">
+        {/* Hidden Heading for Accessibility Structure (H1 -> H2 -> H3) */}
+        <h2 className="sr-only">Categorias de Geladeiras e Equipamentos</h2>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {content.clusters.map((cluster) => (
             <Link key={cluster.id} href={cluster.link} className="block group h-full">
@@ -153,7 +167,7 @@ export default function Home() {
                   </p>
 
                   <div className="mt-auto w-full pt-4 border-t border-slate-50 flex items-center justify-between">
-                    <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">{cluster.count}</span>
+                    <span className="text-[9px] font-black text-slate-600 uppercase tracking-widest">{cluster.count}</span>
                     <div className="flex items-center gap-1 text-[10px] font-black text-amber-600 uppercase tracking-[0.2em] group-hover:translate-x-1 transition-transform">
                       Explorar Guide <ChevronRight className="w-3 h-3" />
                     </div>

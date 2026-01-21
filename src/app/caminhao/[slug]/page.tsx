@@ -98,6 +98,7 @@ export default async function ReviewPage({ params }: ReviewPageProps) {
                 "@type": "Offer",
                 "priceCurrency": "BRL",
                 "price": post.price ? post.price.split('-')[0].trim() : "0", // Rough estimate for schema
+                "priceValidUntil": "2026-12-31",
                 "availability": "https://schema.org/InStock"
             },
             "review": {

@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '',
         '/caminhao',
         '/portatil',
+        '/cozinha',
         '/motorhome',
         '/usadas',
         '/tecnica',

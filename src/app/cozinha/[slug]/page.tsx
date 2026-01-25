@@ -14,19 +14,17 @@ import { ScrewHead } from '@/components/ui/ScrewHead';
 import { AlertBox } from '@/components/industrial/AlertBox';
 import { ProsCons } from '@/components/industrial/ProsCons';
 import { TechSpecs } from '@/components/industrial/TechSpecs';
-import { AffiliateToast } from '@/components/industrial/AffiliateToast';
 import { BestOffer } from '@/components/industrial/BestOffer';
 import { FAQBox } from '@/components/industrial/FAQBox';
-import { CSFScoreBox } from '@/components/industrial/CSFScoreBox';
+import { ProductScore } from '@/components/industrial/ProductScore';
 
 const components = {
     AlertBox,
     ProsCons,
     TechSpecs,
-    AffiliateToast,
     BestOffer,
     FAQBox,
-    CSFScoreBox
+    ProductScore
 };
 
 interface PostParams {

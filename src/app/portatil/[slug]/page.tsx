@@ -82,106 +82,87 @@ export default async function PortatilReviewPage({ params }: ReviewPageProps) {
     // JSON-LD Structured Data
     const jsonLd = {
         "@context": "https://schema.org",
-        "@type": post.rating ? "Product" : "Article",
-        "name": post.title,
-        "description": post.excerpt,
-        "image": post.coverImage ? `https://guiadegeladeira.com.br${post.coverImage}` : undefined,
-
-        // Product Specific Data
-        ...(post.rating && {
-            "brand": {
-                "@type": "Brand",
-                "name": post.brand || "Genérica"
-            },
-            "model": post.model,
-            "offers": {
-                "@type": "Offer",
-                "priceCurrency": "BRL",
-                "price": post.price ? post.price.split('-')[0].trim() : "0",
-                "priceValidUntil": "2026-12-31",
-                "availability": "https://schema.org/InStock"
-            },
-            "review": {
-                "@type": "Review",
-                "@graph": [
-                    {
-                        "@type": "Article",
-                        "@id": `https://guiadegeladeira.com.br/portatil/${slug}#article`,
-                        "headline": post.title,
-                        "name": post.title,
-                        "description": post.excerpt,
-                        "image": post.coverImage ? `https://guiadegeladeira.com.br${post.coverImage}` : `https://guiadegeladeira.com.br/og-image.jpg`,
-                        "datePublished": post.date ? new Date(post.date).toISOString() : new Date().toISOString(),
-                        "dateModified": post.date ? new Date(post.date).toISOString() : new Date().toISOString(),
+        "@graph": [
+            {
+                "@type": post.rating ? "Product" : "Article",
+                "name": post.title,
+                "description": post.excerpt,
+                "image": post.coverImage ? `https://guiadegeladeira.com.br${post.coverImage}` : undefined,
+                ...(post.rating && {
+                    "brand": {
+                        "@type": "Brand",
+                        "name": post.brand || "Genérica"
+                    },
+                    "model": post.model,
+                    "offers": {
+                        "@type": "Offer",
+                        "priceCurrency": "BRL",
+                        "price": post.price ? post.price.split('-')[0].trim() : "0",
+                        "priceValidUntil": "2026-12-31",
+                        "availability": "https://schema.org/InStock"
+                    },
+                    "review": {
+                        "@type": "Review",
+                        "reviewRating": {
+                            "@type": "Rating",
+                            "ratingValue": post.rating,
+                            "bestRating": "10",
+                            "worstRating": "1"
+                        },
                         "author": {
                             "@type": "Person",
-                            "name": post.author || "Equipe GuiaDeGeladeira",
-                            "url": "https://guiadegeladeira.com.br/legal/sobre"
-                        },
-                        "publisher": {
-                            "@type": "Organization",
-                            "name": "Guia de Geladeira",
-                            "logo": {
-                                "@type": "ImageObject",
-                                "url": "https://guiadegeladeira.com.br/logo.png"
-                            }
-                        },
-                        "mainEntityOfPage": {
-                            "@type": "WebPage",
-                            "@id": `https://guiadegeladeira.com.br/portatil/${slug}`
-                        },
-                        "isPartOf": {
-                            "@id": "https://guiadegeladeira.com.br/#website"
+                            "name": post.author || "Equipe GuiaDeGeladeira"
                         }
+                    }
+                })
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://guiadegeladeira.com.br"
                     },
                     {
-                        "@type": "BreadcrumbList",
-                        "@id": `https://guiadegeladeira.com.br/portatil/${slug}#breadcrumb`,
-                        "itemListElement": [
-                            {
-                                "@type": "ListItem",
-                                "position": 1,
-                                "name": "Home",
-                                "item": "https://guiadegeladeira.com.br"
-                            },
-                            {
-                                "@type": "ListItem",
-                                "position": 2,
-                                "name": "Portátil",
-                                "item": "https://guiadegeladeira.com.br/portatil"
-                            },
-                            {
-                                "@type": "ListItem",
-                                "position": 3,
-                                "name": post.title
-                            }
-                        ]
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Portátil",
+                        "item": "https://guiadegeladeira.com.br/portatil"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": post.title
                     }
                 ]
-            };
+            }
+        ]
+    };
 
-            return(
-        <main className = "min-h-screen bg-slate-50 pb-24" >
+    return (
+        <main className="min-h-screen bg-slate-50 pb-24">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
             <Header />
 
-            {/* ARTICLE WRAPPER */ }
-            <article className = "container mx-auto px-4 max-w-2xl py-8" >
+            {/* ARTICLE WRAPPER */}
+            <article className="container mx-auto px-4 max-w-2xl py-8">
 
-                    {/* BREADCRUMBS TÉCNICOS */ }
-                    < nav className = "flex items-center gap-2 text-[10px] font-bold text-slate-300 uppercase tracking-widest mb-6" >
+                {/* BREADCRUMBS TÉCNICOS */}
+                <nav className="flex items-center gap-2 text-[10px] font-bold text-slate-300 uppercase tracking-widest mb-6">
                     <Link href="/" className="hover:text-slate-600 transition-colors">Home</Link>
                     <span className="opacity-30">/</span>
                     <Link href="/portatil" className="hover:text-slate-600 transition-colors">Portáteis</Link>
                     <span className="opacity-30">/</span>
                     <span className="text-slate-600">Manual # {post.id || '---'}</span>
-                </nav >
+                </nav>
 
-        {/* HERO DO ARTICLE */ }
-        < header className = "mb-10 relative" >
+                {/* HERO DO ARTICLE */}
+                <header className="mb-10 relative">
                     <div className="mb-4 flex flex-wrap items-center gap-4">
                         <span className="bg-blue-100 text-blue-800 text-[10px] font-black px-2 py-1 rounded uppercase tracking-[0.2em] border border-blue-200 flex items-center gap-2 transition-all">
                             <Zap className="w-3 h-3" /> Mobilidade & 12V # {post.id || '---'}
@@ -209,64 +190,61 @@ export default async function PortatilReviewPage({ params }: ReviewPageProps) {
                             <Share2 className="w-5 h-5" />
                         </button>
                     </div>
-                </header >
+                </header>
 
-        {/* IMAGE HERO SECTION - Optimized for LCP */ }
-        < div className = "relative w-full aspect-video bg-slate-900 rounded-xl mb-12 overflow-hidden shadow-metallic group border-2 border-slate-200" >
+                {/* IMAGE HERO SECTION - Optimized for LCP */}
+                <div className="relative w-full aspect-video bg-slate-900 rounded-xl mb-12 overflow-hidden shadow-metallic group border-2 border-slate-200">
                     <div className="absolute inset-0 bg-diamond-plate opacity-10 z-10"></div>
                     <ScrewHead className="absolute top-2 left-2 z-20" />
                     <ScrewHead className="absolute top-2 right-2 z-20" />
                     <ScrewHead className="absolute bottom-2 left-2 z-20" />
                     <ScrewHead className="absolute bottom-2 right-2 z-20" />
 
-    {
-        post.coverImage ? (
-            <Image
-                src={post.coverImage}
-                alt={post.title}
-                fill
-                priority
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 672px"
-            />
-        ) : (
-        <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-slate-500 font-teko text-xl uppercase tracking-[0.5em] opacity-30 select-none">Espaço Portátil 12V</span>
-        </div>
-    )
-    }
-                </div >
+                    {post.coverImage ? (
+                        <Image
+                            src={post.coverImage}
+                            alt={post.title}
+                            fill
+                            priority
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, 672px"
+                        />
+                    ) : (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <span className="text-slate-500 font-teko text-xl uppercase tracking-[0.5em] opacity-30 select-none">Espaço Portátil 12V</span>
+                        </div>
+                    )}
+                </div>
 
-        {/* CONTEÚDO MDX */ }
-        < div className = "prose prose-slate prose-lg max-w-none 
-    prose - headings: font - teko prose - headings:uppercase prose - headings: font - black prose - headings: tracking - tight prose - headings: text - slate - 900
-    prose - h2: text - 3xl prose - h2: border - b - 2 prose - h2: border - slate - 100 prose - h2: pb - 2 prose - h2: mt - 12
-    prose - p: text - slate - 700 prose - p: leading - relaxed prose - p: mb - 6
-    prose - strong: text - slate - 900 prose - strong: font - black
-    prose - blockquote: border - l - 4 prose - blockquote: border - blue - 500 prose - blockquote: bg - slate - 50 prose - blockquote: py - 2 prose - blockquote: px - 6 prose - blockquote: rounded - r - lg prose - blockquote: italic
-    prose - a: text - blue - 600 prose - a: no - underline prose - a: font - black hover: prose - a: underline
-    prose - li: marker: text - blue - 500 prose - img: rounded - xl prose - img: shadow - lg">
+                {/* CONTEÚDO MDX */}
+                <div className="prose prose-slate prose-lg max-w-none 
+                    prose-headings:font-teko prose-headings:uppercase prose-headings:font-black prose-headings:tracking-tight prose-headings:text-slate-900
+                    prose-h2:text-3xl prose-h2:border-b-2 prose-h2:border-slate-100 prose-h2:pb-2 prose-h2:mt-12
+                    prose-p:text-slate-700 prose-p:leading-relaxed prose-p:mb-6
+                    prose-strong:text-slate-900 prose-strong:font-black
+                    prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:bg-slate-50 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:italic
+                    prose-a:text-blue-600 prose-a:no-underline prose-a:font-black hover:prose-a:underline
+                    prose-li:marker:text-blue-500 prose-img:rounded-xl prose-img:shadow-lg">
 
-        < MDXRemote
-    source = { post.content }
-    components = {{
+                    <MDXRemote
+                        source={post.content}
+                        components={{
                             ...MdxComponents,
-            BestOffer,
-                        }
-}
-options = {{
-    mdxOptions: {
-        remarkPlugins: [remarkGfm],
+                            BestOffer,
+                        }}
+                        options={{
+                            mdxOptions: {
+                                remarkPlugins: [remarkGfm],
                             },
-}}
+                        }}
                     />
-                </div >
+                </div>
 
-    {/* RELACIONADOS */ }
-    < RelatedPosts posts = { relatedPosts } currentSlug = { slug } />
+                {/* RELACIONADOS */}
+                <RelatedPosts posts={relatedPosts} currentSlug={slug} />
 
-        {/* AUTHOR BOX */ }
-        < div className = "mt-16 relative p-8 bg-blue-600 text-white rounded-2xl overflow-hidden shadow-2xl" >
+                {/* AUTHOR BOX */}
+                <div className="mt-16 relative p-8 bg-blue-600 text-white rounded-2xl overflow-hidden shadow-2xl">
                     <div className="absolute inset-0 bg-diamond-plate opacity-10"></div>
                     <div className="absolute top-0 bottom-0 right-0 w-2 bg-slate-900"></div>
 
@@ -285,12 +263,12 @@ options = {{
                             &quot;Mobilidade exige eficiência. Não indicamos aparelhos que gasta mais do que sua bateria pode fornecer. Cada review foca no equilíbrio real entre frio e consumo.&quot;
                         </p>
                     </div>
-                </div >
+                </div>
 
-            </article >
+            </article>
 
             <Footer />
             <BottomNav />
-        </main >
+        </main>
     );
 }

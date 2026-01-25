@@ -11,8 +11,8 @@ import { cn } from '@/lib/utils';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Mini Geladeiras Portáteis 12v: Para Carro, Uber e Viagem',
-    description: 'Guia de compra de geladeiras pequenas. Black+Decker, Resfriar 18L e modelos térmicos para manter bebidas geladas no carro.',
+    title: 'Geladeira Automotiva 12v & Portátil: O Guia Definitivo 2026',
+    description: 'Tudo sobre Geladeira Automotiva e Portátil. Análises da Hent, Resfriar e Black+Decker. Modelos 12v para Carro, Uber e Caminhão aqui.',
 };
 
 export default function PortatilPage() {
@@ -40,10 +40,10 @@ export default function PortatilPage() {
                         <Zap className="w-4 h-4" /> Portáteis & 12V/24V
                     </div>
                     <h1 className="text-5xl md:text-7xl font-black font-teko uppercase leading-[0.9] tracking-tighter mb-6 drop-shadow-2xl">
-                        Liberdade com <span className="text-blue-500">Energia Pura</span>
+                        Geladeiras <span className="text-blue-500">Automotivas</span>
                     </h1>
                     <p className="text-slate-400 max-w-xl mx-auto text-lg font-medium leading-relaxed">
-                        As melhores geladeiras para vans, 4x4, barcos e pickup. Foco em baixo consumo, portabilidade e resistência a inclinações severas.
+                        O guia definitivo de refrigeração 12v portátil. Das famosas <strong>Hent</strong> custo-benefício às robustas <strong>Resfriar</strong>. Seu carro transformado em casa.
                     </p>
                 </div>
             </section>
@@ -66,11 +66,18 @@ export default function PortatilPage() {
                             </div>
                         </div>
 
-                        <div className="bg-blue-600 p-8 rounded-2xl text-white relative overflow-hidden border-b-4 border-slate-900 shadow-2xl">
+                        <div className="bg-blue-600 p-8 rounded-2xl text-white relative overflow-hidden border-b-4 border-slate-900 shadow-2xl group cursor-pointer hover:bg-blue-700 transition-colors">
+                            <Link href="/portatil/geladeira-hent-e-boa" className="absolute inset-0 z-10"></Link>
                             <div className="absolute inset-0 bg-diamond-plate opacity-10 pointer-events-none"></div>
-                            <h4 className="text-2xl font-black font-teko uppercase leading-none mb-4 flex items-center gap-2"><Car className="w-6 h-6" /> Jeep & Van</h4>
-                            <p className="text-xs text-blue-100 mb-6 leading-relaxed">Guia de instalação em console central e suportes de assoalho.</p>
-                            <Link href="#" className="block text-center py-3 bg-slate-900 text-white rounded font-black font-teko uppercase tracking-widest text-sm hover:bg-slate-800 transition-all">Ver Tutoriais</Link>
+                            <div className="absolute top-2 right-2 bg-amber-400 text-slate-900 text-[10px] font-black px-2 py-1 rounded uppercase tracking-widest animate-pulse">Trending</div>
+
+                            <h4 className="text-3xl font-black font-teko uppercase leading-none mb-2">HENT é Boa?</h4>
+                            <p className="text-sm text-blue-100 mb-4 font-medium">A marca que invadiu o mercado. 18k pesquisas/mês.</p>
+
+                            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest bg-slate-900/20 p-2 rounded">
+                                <span className="text-amber-400">★ 8.5</span>
+                                <span>Custo-Benefício</span>
+                            </div>
                         </div>
 
                         <div className="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-metallic flex items-center justify-between group">

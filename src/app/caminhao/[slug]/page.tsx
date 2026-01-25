@@ -111,114 +111,128 @@ export default async function ReviewPage({ params }: ReviewPageProps) {
                 },
                 "author": {
                     "@type": "Person",
-                    "name": post.author || "Tiago Fernandes"
+                    "name": post.author || "Equipe GuiaDeGeladeira",
+                    "url": "https://guiadegeladeira.com.br/legal/sobre"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Guia de Geladeira",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://guiadegeladeira.com.br/logo.png"
+                    }
+                },
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": `https://guiadegeladeira.com.br/caminhao/${slug}`
+                },
+                "isPartOf": {
+                    "@id": "https://guiadegeladeira.com.br/#website"
                 }
             },
-            "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": post.rating,
-                "reviewCount": "1", // Single expert review
-                "bestRating": "10",
-                "worstRating": "1"
-            }
-        }),
+            {
+        "@type": "BreadcrumbList",
+            "@id": `https://guiadegeladeira.com.br/caminhao/${slug}#breadcrumb`,
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://guiadegeladeira.com.br"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Caminhão",
+                        "item": "https://guiadegeladeira.com.br/caminhao"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": post.title
+                    }
+                ]
+    }
+        ]
+};
 
-        "author": {
-            "@type": "Person",
-            "name": post.author || "Tiago Fernandes",
-            "url": "https://guiadegeladeira.com.br/legal/sobre"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Guia de Geladeira",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://guiadegeladeira.com.br/logo.png"
-            }
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": `https://guiadegeladeira.com.br/${post.cluster}/${slug}`
-        }
-    };
+return (
+    <main className="min-h-screen bg-slate-50 pb-24">
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <Header />
 
-    return (
-        <main className="min-h-screen bg-slate-50 pb-24">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-            <Header />
+        {/* ARTICLE WRAPPER */}
+        <article className="container mx-auto px-4 max-w-2xl py-8">
 
-            {/* ARTICLE WRAPPER */}
-            <article className="container mx-auto px-4 max-w-2xl py-8">
+            {/* BREADCRUMBS TÉCNICOS */}
+            <nav className="flex items-center gap-2 text-[10px] font-bold text-slate-300 uppercase tracking-widest mb-6">
+                <Link href="/" className="hover:text-slate-600 transition-colors">Home</Link>
+                <span className="opacity-30">/</span>
+                <span className="text-slate-600">Review # {post.id || '---'}</span>
+            </nav>
 
-                {/* BREADCRUMBS TÉCNICOS */}
-                <nav className="flex items-center gap-2 text-[10px] font-bold text-slate-300 uppercase tracking-widest mb-6">
-                    <Link href="/" className="hover:text-slate-600 transition-colors">Home</Link>
-                    <span className="opacity-30">/</span>
-                    <span className="text-slate-600">Review # {post.id || '---'}</span>
-                </nav>
-
-                {/* HERO DO ARTICLE */}
-                <header className="mb-10 relative">
-                    <div className="mb-4 flex flex-wrap items-center gap-4">
-                        <span className="bg-amber-100 text-amber-800 text-[10px] font-black px-2 py-1 rounded uppercase tracking-[0.2em] border border-amber-200">
-                            Análise Técnica # {post.id || '---'}
-                        </span>
-                        <div className="flex items-center gap-4 text-slate-300 text-[10px] font-bold uppercase tracking-widest">
-                            <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {formatDate(post.date)}</span>
-                            <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> 8 Min De Leitura</span>
-                        </div>
+            {/* HERO DO ARTICLE */}
+            <header className="mb-10 relative">
+                <div className="mb-4 flex flex-wrap items-center gap-4">
+                    <span className="bg-amber-100 text-amber-800 text-[10px] font-black px-2 py-1 rounded uppercase tracking-[0.2em] border border-amber-200">
+                        Análise Técnica # {post.id || '---'}
+                    </span>
+                    <div className="flex items-center gap-4 text-slate-300 text-[10px] font-bold uppercase tracking-widest">
+                        <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {formatDate(post.date)}</span>
+                        <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> 8 Min De Leitura</span>
                     </div>
-
-                    <h1 className="text-4xl md:text-5xl font-black text-slate-900 font-teko leading-none mb-6 uppercase tracking-tight">
-                        {post.title}
-                    </h1>
-
-                    <div className="flex items-center gap-3 p-3 bg-slate-100 rounded-lg border border-slate-200 inset-metal">
-                        <div className="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center text-amber-500 shadow-lg relative overflow-hidden">
-                            <div className="absolute inset-0 bg-diamond-plate opacity-20"></div>
-                            <User className="w-5 h-5 relative z-10" />
-                        </div>
-                        <div>
-                            <p className="text-[10px] font-bold text-slate-300 uppercase tracking-widest leading-none mb-1">Escrito por</p>
-                            <p className="font-black text-slate-900 font-teko text-lg leading-none uppercase tracking-wide">{post.author || "Tiago Fernandes"}</p>
-                        </div>
-                        <button className="ml-auto p-2 text-slate-400 hover:text-slate-900 transition-colors">
-                            <Share2 className="w-5 h-5" />
-                        </button>
-                    </div>
-                </header>
-
-                {/* IMAGE HERO SECTION - Optimized for LCP */}
-                <div className="relative w-full aspect-video bg-slate-900 rounded-xl mb-12 overflow-hidden shadow-metallic group border-2 border-slate-200">
-                    <div className="absolute inset-0 bg-diamond-plate opacity-10 z-10"></div>
-                    {/* Corner Screws */}
-                    <ScrewHead className="absolute top-2 left-2 z-20" />
-                    <ScrewHead className="absolute top-2 right-2 z-20" />
-                    <ScrewHead className="absolute bottom-2 left-2 z-20" />
-                    <ScrewHead className="absolute bottom-2 right-2 z-20" />
-
-                    {post.coverImage ? (
-                        <Image
-                            src={post.coverImage}
-                            alt={post.title}
-                            fill
-                            priority
-                            className="object-cover"
-                            sizes="(max-width: 768px) 100vw, 672px"
-                        />
-                    ) : (
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <span className="text-slate-500 font-teko text-xl uppercase tracking-[0.5em] opacity-30 select-none">Imagem Industrial</span>
-                        </div>
-                    )}
-                    <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-slate-900 to-transparent z-10"></div>
                 </div>
 
-                {/* CONTEÚDO MDX (PROSE REFINADA) */}
-                <div className="prose prose-slate prose-lg max-w-none 
+                <h1 className="text-4xl md:text-5xl font-black text-slate-900 font-teko leading-none mb-6 uppercase tracking-tight">
+                    {post.title}
+                </h1>
+
+                <div className="flex items-center gap-3 p-3 bg-slate-100 rounded-lg border border-slate-200 inset-metal">
+                    <div className="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center text-amber-500 shadow-lg relative overflow-hidden">
+                        <div className="absolute inset-0 bg-diamond-plate opacity-20"></div>
+                        <User className="w-5 h-5 relative z-10" />
+                    </div>
+                    <div>
+                        <p className="text-[10px] font-bold text-slate-300 uppercase tracking-widest leading-none mb-1">Escrito por</p>
+                        <p className="font-black text-slate-900 font-teko text-lg leading-none uppercase tracking-wide">{post.author || "Tiago Fernandes"}</p>
+                    </div>
+                    <button className="ml-auto p-2 text-slate-400 hover:text-slate-900 transition-colors">
+                        <Share2 className="w-5 h-5" />
+                    </button>
+                </div>
+            </header>
+
+            {/* IMAGE HERO SECTION - Optimized for LCP */}
+            <div className="relative w-full aspect-video bg-slate-900 rounded-xl mb-12 overflow-hidden shadow-metallic group border-2 border-slate-200">
+                <div className="absolute inset-0 bg-diamond-plate opacity-10 z-10"></div>
+                {/* Corner Screws */}
+                <ScrewHead className="absolute top-2 left-2 z-20" />
+                <ScrewHead className="absolute top-2 right-2 z-20" />
+                <ScrewHead className="absolute bottom-2 left-2 z-20" />
+                <ScrewHead className="absolute bottom-2 right-2 z-20" />
+
+                {post.coverImage ? (
+                    <Image
+                        src={post.coverImage}
+                        alt={post.title}
+                        fill
+                        priority
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 672px"
+                    />
+                ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-slate-500 font-teko text-xl uppercase tracking-[0.5em] opacity-30 select-none">Imagem Industrial</span>
+                    </div>
+                )}
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-slate-900 to-transparent z-10"></div>
+            </div>
+
+            {/* CONTEÚDO MDX (PROSE REFINADA) */}
+            <div className="prose prose-slate prose-lg max-w-none 
             prose-headings:font-teko prose-headings:uppercase prose-headings:font-black prose-headings:tracking-tight prose-headings:text-slate-900
             prose-h2:text-3xl prose-h2:border-b-2 prose-h2:border-slate-100 prose-h2:pb-2 prose-h2:mt-12
             prose-p:text-slate-700 prose-p:leading-relaxed prose-p:mb-6
@@ -227,55 +241,55 @@ export default async function ReviewPage({ params }: ReviewPageProps) {
             prose-a:text-amber-600 prose-a:no-underline prose-a:font-black hover:prose-a:underline
             prose-li:marker:text-amber-500 prose-img:rounded-xl prose-img:shadow-lg">
 
-                    <MDXRemote
-                        source={post.content}
-                        components={{
-                            ...MdxComponents,
-                            BestOffer, // Inject locally to the MDX
-                        }}
-                        options={{
-                            mdxOptions: {
-                                remarkPlugins: [remarkGfm],
-                            },
-                        }}
-                    />
-                </div>
+                <MDXRemote
+                    source={post.content}
+                    components={{
+                        ...MdxComponents,
+                        BestOffer, // Inject locally to the MDX
+                    }}
+                    options={{
+                        mdxOptions: {
+                            remarkPlugins: [remarkGfm],
+                        },
+                    }}
+                />
+            </div>
 
-                {/* RELACIONADOS */}
-                <RelatedPosts posts={relatedPosts} currentSlug={slug} />
+            {/* RELACIONADOS */}
+            <RelatedPosts posts={relatedPosts} currentSlug={slug} />
 
-                {/* TRUST & AUTHORITY FOOTER BOX */}
-                <div className="mt-16 relative p-8 bg-slate-900 text-white rounded-2xl overflow-hidden shadow-2xl">
-                    <div className="absolute inset-0 bg-diamond-plate opacity-10"></div>
-                    <div className="absolute top-0 bottom-0 right-0 w-2 bg-amber-500"></div>
+            {/* TRUST & AUTHORITY FOOTER BOX */}
+            <div className="mt-16 relative p-8 bg-slate-900 text-white rounded-2xl overflow-hidden shadow-2xl">
+                <div className="absolute inset-0 bg-diamond-plate opacity-10"></div>
+                <div className="absolute top-0 bottom-0 right-0 w-2 bg-amber-500"></div>
 
-                    <div className="relative z-10">
-                        <div className="flex items-center gap-4 mb-6">
-                            <div className="w-14 h-14 bg-amber-500 rounded-full flex items-center justify-center text-slate-900 shadow-xl border-4 border-slate-800">
-                                <ShieldCheck className="w-8 h-8" />
-                            </div>
-                            <div>
-                                <h4 className="font-black font-teko text-2xl uppercase tracking-wider leading-none">Compromisso com o Estradeiro</h4>
-                                <p className="text-slate-300 text-xs uppercase tracking-widest mt-1">Sua confiança é nosso maior patrimônio</p>
-                            </div>
+                <div className="relative z-10">
+                    <div className="flex items-center gap-4 mb-6">
+                        <div className="w-14 h-14 bg-amber-500 rounded-full flex items-center justify-center text-slate-900 shadow-xl border-4 border-slate-800">
+                            <ShieldCheck className="w-8 h-8" />
                         </div>
-
-                        <p className="text-slate-300 text-sm leading-relaxed mb-6 font-medium italic">
-                            &quot;Não estamos aqui para vender geladeira. Estamos aqui para garantir que você não jogue seu dinheiro suado no lixo com equipamento que gela mal e quebra na primeira buraqueira.&quot;
-                        </p>
-
-                        <div className="flex items-center gap-2 text-[10px] font-bold text-slate-500 bg-slate-800/50 p-3 rounded border border-slate-700">
-                            <Info className="w-4 h-4 text-amber-500 shrink-0" />
-                            <span className="uppercase tracking-widest">Nota: Podemos ganhar uma pequena comissão se você comprar pelos nossos links. Isso mantém o site no ar sem custar um centavo a mais para você.</span>
+                        <div>
+                            <h4 className="font-black font-teko text-2xl uppercase tracking-wider leading-none">Compromisso com o Estradeiro</h4>
+                            <p className="text-slate-300 text-xs uppercase tracking-widest mt-1">Sua confiança é nosso maior patrimônio</p>
                         </div>
                     </div>
+
+                    <p className="text-slate-300 text-sm leading-relaxed mb-6 font-medium italic">
+                        &quot;Não estamos aqui para vender geladeira. Estamos aqui para garantir que você não jogue seu dinheiro suado no lixo com equipamento que gela mal e quebra na primeira buraqueira.&quot;
+                    </p>
+
+                    <div className="flex items-center gap-2 text-[10px] font-bold text-slate-500 bg-slate-800/50 p-3 rounded border border-slate-700">
+                        <Info className="w-4 h-4 text-amber-500 shrink-0" />
+                        <span className="uppercase tracking-widest">Nota: Podemos ganhar uma pequena comissão se você comprar pelos nossos links. Isso mantém o site no ar sem custar um centavo a mais para você.</span>
+                    </div>
                 </div>
+            </div>
 
-            </article>
+        </article>
 
-            <Footer />
-            <BottomNav />
+        <Footer />
+        <BottomNav />
 
-        </main>
-    );
+    </main>
+);
 }

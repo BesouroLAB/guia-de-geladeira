@@ -79,30 +79,65 @@ export default async function ReviewPage({ params }: ReviewPageProps) {
         .filter(p => p.cluster === post.cluster && p.slug !== slug)
         .slice(0, 3);
 
-    // JSON-LD Structured Data
+    // Generic Schema Generator
+    // TODO: Move to a specialized helper in @/lib/schema.ts for consistency
     const jsonLd = {
         "@context": "https://schema.org",
-        "@type": "Article",
-        "name": post.title,
-        "description": post.excerpt,
-        "image": post.coverImage ? `https://guiadegeladeira.com.br${post.coverImage}` : undefined,
-        "author": {
-            "@type": "Person",
-            "name": post.author || "Equipe GuiaDeGeladeira",
-            "url": "https://guiadegeladeira.com.br/legal/sobre"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Guia de Geladeira",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://guiadegeladeira.com.br/logo.png"
+        "@graph": [
+            {
+                "@type": "Article",
+                "@id": `https://guiadegeladeira.com.br/usadas/${slug}#article`,
+                "headline": post.title,
+                "name": post.title,
+                "description": post.excerpt,
+                "image": post.coverImage ? `https://guiadegeladeira.com.br${post.coverImage}` : `https://guiadegeladeira.com.br/og-image.jpg`,
+                "datePublished": post.date ? new Date(post.date).toISOString() : new Date().toISOString(),
+                "dateModified": post.date ? new Date(post.date).toISOString() : new Date().toISOString(),
+                "author": {
+                    "@type": "Person",
+                    "name": post.author || "Equipe GuiaDeGeladeira",
+                    "url": "https://guiadegeladeira.com.br/legal/sobre"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Guia de Geladeira",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://guiadegeladeira.com.br/logo.png"
+                    }
+                },
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": `https://guiadegeladeira.com.br/usadas/${slug}`
+                },
+                "isPartOf": {
+                    "@id": "https://guiadegeladeira.com.br/#website"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": `https://guiadegeladeira.com.br/usadas/${slug}#breadcrumb`,
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://guiadegeladeira.com.br"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Usadas",
+                        "item": "https://guiadegeladeira.com.br/usadas"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": post.title
+                    }
+                ]
             }
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": `https://guiadegeladeira.com.br/usadas/${slug}`
-        }
+        ]
     };
 
     return (

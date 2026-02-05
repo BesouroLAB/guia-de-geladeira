@@ -8,6 +8,7 @@ import { LinkCard } from "../industrial/LinkCard";
 import { SlangBox } from "../industrial/SlangBox";
 import { FAQBox } from "../industrial/FAQBox";
 import { BestOffer } from "../industrial/BestOffer";
+import { PodcastPlayer } from "../industrial/PodcastPlayer";
 import { Table, TableHead, TableBody, TableRow, TableHeader, TableCell } from "./Table";
 
 export const MdxComponents = {
@@ -21,6 +22,7 @@ export const MdxComponents = {
     SlangBox,
     FAQBox,
     BestOffer,
+    PodcastPlayer,
     // Mapping standard HTML table elements to our custom components
     table: Table,
     thead: TableHead,

@@ -26,7 +26,8 @@ export async function generateMetadata({ params }: ReviewPageProps): Promise<Met
     const fullTitle = `${post.title} | Guia de Geladeira Motorhome`;
     const fullDescription = post.excerpt || `Guia completo sobre ${post.title} para motorhome e vanlife.`;
     const url = `https://guiadegeladeira.com.br/motorhome/${slug}`;
-    const image = post.coverImage ? `https://guiadegeladeira.com.br${post.coverImage}` : 'https://guiadegeladeira.com.br/og-image.jpg';
+    const imageSuffix = post.coverImage?.startsWith('http') ? post.coverImage : `https://guiadegeladeira.com.br${post.coverImage}`;
+    const image = post.coverImage ? imageSuffix : 'https://guiadegeladeira.com.br/og-image.jpg';
 
     return {
         title: fullTitle,
@@ -90,7 +91,7 @@ export default async function ReviewPage({ params }: ReviewPageProps) {
                 "headline": post.title,
                 "name": post.title,
                 "description": post.excerpt,
-                "image": post.coverImage ? `https://guiadegeladeira.com.br${post.coverImage}` : `https://guiadegeladeira.com.br/og-image.jpg`,
+                "image": post.coverImage ? (post.coverImage.startsWith('http') ? post.coverImage : `https://guiadegeladeira.com.br${post.coverImage}`) : `https://guiadegeladeira.com.br/og-image.jpg`,
                 "datePublished": post.date ? new Date(post.date).toISOString() : new Date().toISOString(),
                 "dateModified": post.date ? new Date(post.date).toISOString() : new Date().toISOString(), // Fallback to publish date if no modified date
                 "author": {

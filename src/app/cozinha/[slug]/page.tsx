@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: PostParams) {
         openGraph: {
             title: post.title,
             description: post.excerpt,
-            images: post.coverImage ? [post.coverImage] : [],
+            images: post.coverImage ? [post.coverImage.startsWith('http') ? post.coverImage : `https://guiadegeladeira.com.br${post.coverImage}`] : [],
         },
     };
 }
@@ -84,7 +84,7 @@ export default async function CozinhaPost({ params }: PostParams) {
                 "headline": post.title,
                 "name": post.title,
                 "description": post.excerpt,
-                "image": post.coverImage ? `https://guiadegeladeira.com.br${post.coverImage}` : `https://guiadegeladeira.com.br/og-image.jpg`,
+                "image": post.coverImage ? (post.coverImage.startsWith('http') ? post.coverImage : `https://guiadegeladeira.com.br${post.coverImage}`) : `https://guiadegeladeira.com.br/og-image.jpg`,
                 "datePublished": post.date ? new Date(post.date).toISOString() : new Date().toISOString(),
                 "dateModified": post.date ? new Date(post.date).toISOString() : new Date().toISOString(),
                 "author": {

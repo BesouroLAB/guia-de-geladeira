@@ -26,7 +26,8 @@ export async function generateMetadata({ params }: ReviewPageProps): Promise<Met
     const fullTitle = `${post.title} | Guia de Geladeira`;
     const fullDescription = post.excerpt || `Análise técnica detalhada da ${post.title}. Confira performance, consumo e durabilidade.`;
     const url = `https://guiadegeladeira.com.br/${post.cluster}/${slug}`;
-    const image = post.coverImage ? `https://guiadegeladeira.com.br${post.coverImage}` : 'https://guiadegeladeira.com.br/og-image.jpg';
+    const imageSuffix = post.coverImage?.startsWith('http') ? post.coverImage : `https://guiadegeladeira.com.br${post.coverImage}`;
+    const image = post.coverImage ? imageSuffix : 'https://guiadegeladeira.com.br/og-image.jpg';
 
     return {
         title: fullTitle,
@@ -87,7 +88,7 @@ export default async function ReviewPage({ params }: ReviewPageProps) {
                 "@type": post.rating ? "Product" : "Article", // Smart switch: if rating exists, it's a Product/Review
                 "name": post.title,
                 "description": post.excerpt,
-                "image": post.coverImage ? `https://guiadegeladeira.com.br${post.coverImage}` : undefined,
+                "image": post.coverImage ? (post.coverImage.startsWith('http') ? post.coverImage : `https://guiadegeladeira.com.br${post.coverImage}`) : undefined,
 
                 // Product Specific Data (Only if Frontmatter exists)
                 ...(post.rating && {
@@ -134,7 +135,8 @@ export default async function ReviewPage({ params }: ReviewPageProps) {
                             "applicableCountry": "BR",
                             "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
                             "merchantReturnDays": 7,
-                            "returnMethod": "https://schema.org/ReturnByMail"
+                            "returnMethod": "https://schema.org/ReturnByMail",
+                            "returnFees": "https://schema.org/FreeReturn"
                         }
                     },
                     "review": {

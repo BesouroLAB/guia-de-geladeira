@@ -99,7 +99,41 @@ export default async function PortatilReviewPage({ params }: ReviewPageProps) {
                         "priceCurrency": "BRL",
                         "price": post.price ? post.price.split('-')[0].trim() : "0",
                         "priceValidUntil": "2026-12-31",
-                        "availability": "https://schema.org/InStock"
+                        "availability": "https://schema.org/InStock",
+                        "shippingDetails": {
+                            "@type": "OfferShippingDetails",
+                            "shippingRate": {
+                                "@type": "MonetaryAmount",
+                                "value": "0",
+                                "currency": "BRL"
+                            },
+                            "shippingDestination": {
+                                "@type": "DefinedRegion",
+                                "addressCountry": "BR"
+                            },
+                            "deliveryTime": {
+                                "@type": "ShippingDeliveryTime",
+                                "handlingTime": {
+                                    "@type": "QuantitativeValue",
+                                    "minValue": 0,
+                                    "maxValue": 2,
+                                    "unitCode": "DAY"
+                                },
+                                "transitTime": {
+                                    "@type": "QuantitativeValue",
+                                    "minValue": 1,
+                                    "maxValue": 7,
+                                    "unitCode": "DAY"
+                                }
+                            }
+                        },
+                        "hasMerchantReturnPolicy": {
+                            "@type": "MerchantReturnPolicy",
+                            "applicableCountry": "BR",
+                            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                            "merchantReturnDays": 7,
+                            "returnMethod": "https://schema.org/ReturnByMail"
+                        }
                     },
                     "review": {
                         "@type": "Review",

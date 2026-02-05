@@ -15,7 +15,7 @@ export function HazardButton({ text, subtext, link, size = "normal" }: HazardBut
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
-                "group relative block w-full bg-amber-500 text-black rounded-xl shadow-[0_8px_0_rgb(146,64,14)] hover:shadow-[0_4px_0_rgb(146,64,14)] hover:translate-y-[4px] active:translate-y-[8px] active:shadow-none transition-all overflow-hidden my-12 border-2 border-black/10",
+                "group relative block w-full bg-amber-500 text-slate-950 rounded-xl shadow-[0_8px_0_rgb(146,64,14)] hover:shadow-[0_4px_0_rgb(146,64,14)] hover:translate-y-[4px] active:translate-y-[8px] active:shadow-none transition-all overflow-hidden my-12 border-2 border-slate-950/10",
                 size === "large" ? "py-7 px-10" : "py-5 px-8"
             )}
         >

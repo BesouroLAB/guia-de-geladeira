@@ -57,9 +57,9 @@ export function BestOffer({ productName, price, originalPrice, link, store = "Am
                         href={link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full mt-6 py-5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl font-black font-teko text-2xl uppercase tracking-[0.1em] flex items-center justify-center gap-3 transition-all active:scale-95 shadow-[0_10px_0_#b45309] hover:shadow-[0_5px_0_#b45309] hover:translate-y-[5px]"
+                        className="w-full mt-6 py-5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl font-black font-teko text-3xl uppercase tracking-[0.1em] flex items-center justify-center gap-3 transition-all active:scale-95 shadow-[0_10px_0_#b45309] hover:shadow-[0_5px_0_#b45309] hover:translate-y-[5px]"
                     >
-                        Ver na Loja <ExternalLink className="w-6 h-6 border-l-2 border-slate-950/20 pl-1" />
+                        Ver na Loja <ExternalLink className="w-6 h-6 border-l-2 border-slate-950/40 pl-1" />
                     </a>
 
                     <span className="mt-6 text-[9px] font-black text-slate-400 uppercase tracking-widest text-center">

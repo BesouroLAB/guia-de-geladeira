@@ -83,7 +83,7 @@ export const PodcastPlayer: React.FC<PodcastPlayerProps> = ({
                         <h4 className="font-black font-teko text-xl uppercase tracking-wider leading-none text-white mb-1 truncate">
                             {title}
                         </h4>
-                        <p className="text-amber-500 text-[10px] font-bold uppercase tracking-widest flex items-center gap-1.5 leading-none">
+                        <p className="text-amber-400 text-[10px] font-bold uppercase tracking-widest flex items-center gap-1.5 leading-none">
                             <Headphones className="w-3 h-3" /> Exclusivo para você
                         </p>
                     </div>
@@ -110,16 +110,16 @@ export const PodcastPlayer: React.FC<PodcastPlayerProps> = ({
                     className="flex items-center justify-between bg-amber-500 hover:bg-amber-400 p-3 rounded-xl transition-all shadow-lg group/btn active:scale-[0.98]"
                 >
                     <div className="flex items-center gap-3">
-                        <div className="bg-slate-900/10 p-2 rounded-lg group-hover/btn:scale-110 transition-transform">
-                            <ShoppingCart className="w-5 h-5 text-slate-900" />
+                        <div className="bg-slate-950/10 p-2 rounded-lg group-hover/btn:scale-110 transition-transform">
+                            <ShoppingCart className="w-5 h-5 text-slate-950" />
                         </div>
                         <div>
-                            <p className="text-[10px] font-bold text-slate-900/70 uppercase tracking-tighter leading-none mb-1 text-center">Menor preço na</p>
-                            <p className="font-black text-slate-900 font-teko text-xl leading-none uppercase tracking-wide">COMPRAR NA AMAZON</p>
+                            <p className="text-[10px] font-bold text-slate-950 uppercase tracking-tighter leading-none mb-1 text-center">Menor preço na</p>
+                            <p className="font-black text-slate-950 font-teko text-2xl leading-none uppercase tracking-wide">COMPRAR NA AMAZON</p>
                         </div>
                     </div>
-                    <div className="bg-slate-900 rounded-lg px-3 py-2 shadow-inner">
-                        <p className="text-[10px] font-black text-amber-500 leading-none uppercase tracking-widest animate-pulse">OFERTA</p>
+                    <div className="bg-slate-950 rounded-lg px-3 py-2 shadow-inner">
+                        <p className="text-[10px] font-black text-white leading-none uppercase tracking-widest animate-pulse">OFERTA</p>
                     </div>
                 </a>
 

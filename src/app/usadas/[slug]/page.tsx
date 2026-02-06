@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { Calendar, ShieldCheck, Clock, User, Share2, Info, Search, AlertTriangle } from 'lucide-react';
 import { BottomNav } from "@/components/ui/BottomNav";
 import { ScrewHead } from "@/components/ui/ScrewHead";
-import { formatDate } from "@/lib/utils";
+import { formatDate, sanitizePrice } from "@/lib/utils";
 import { Header } from "@/components/ui/Header";
 import { Footer } from "@/components/ui/Footer";
 import { RelatedPosts } from "@/components/industrial/RelatedPosts";
@@ -86,10 +86,9 @@ export default async function ReviewPage({ params }: ReviewPageProps) {
         "@context": "https://schema.org",
         "@graph": [
             {
-                "@type": "Article",
-                "@id": `https://guiadegeladeira.com.br/usadas/${slug}#article`,
-                "headline": post.title,
+                "@type": post.rating ? "Product" : "Article",
                 "name": post.title,
+                "headline": post.title,
                 "description": post.excerpt,
                 "image": post.coverImage ? (post.coverImage.startsWith('http') ? post.coverImage : `https://guiadegeladeira.com.br${post.coverImage}`) : `https://guiadegeladeira.com.br/og-image.jpg`,
                 "datePublished": post.date ? new Date(post.date).toISOString() : new Date().toISOString(),
@@ -113,7 +112,70 @@ export default async function ReviewPage({ params }: ReviewPageProps) {
                 },
                 "isPartOf": {
                     "@id": "https://guiadegeladeira.com.br/#website"
-                }
+                },
+                ...(post.rating && {
+                    "brand": {
+                        "@type": "Brand",
+                        "name": post.brand || "Genérica"
+                    },
+                    "model": post.model,
+                    "offers": {
+                        "@type": "Offer",
+                        "priceCurrency": "BRL",
+                        "price": sanitizePrice(post.price || "0"),
+                        "priceValidUntil": "2026-12-31",
+                        "url": `https://guiadegeladeira.com.br/usadas/${slug}`,
+                        "availability": "https://schema.org/InStock",
+                        "shippingDetails": {
+                            "@type": "OfferShippingDetails",
+                            "shippingRate": {
+                                "@type": "MonetaryAmount",
+                                "value": "0",
+                                "currency": "BRL"
+                            },
+                            "shippingDestination": {
+                                "@type": "DefinedRegion",
+                                "addressCountry": "BR"
+                            },
+                            "deliveryTime": {
+                                "@type": "ShippingDeliveryTime",
+                                "handlingTime": {
+                                    "@type": "QuantitativeValue",
+                                    "minValue": 0,
+                                    "maxValue": 2,
+                                    "unitCode": "DAY"
+                                },
+                                "transitTime": {
+                                    "@type": "QuantitativeValue",
+                                    "minValue": 1,
+                                    "maxValue": 7,
+                                    "unitCode": "DAY"
+                                }
+                            }
+                        },
+                        "hasMerchantReturnPolicy": {
+                            "@type": "MerchantReturnPolicy",
+                            "applicableCountry": "BR",
+                            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                            "merchantReturnDays": 7,
+                            "returnMethod": "https://schema.org/ReturnByMail",
+                            "returnFees": "https://schema.org/FreeReturn"
+                        }
+                    },
+                    "review": {
+                        "@type": "Review",
+                        "reviewRating": {
+                            "@type": "Rating",
+                            "ratingValue": post.rating,
+                            "bestRating": "10",
+                            "worstRating": "1"
+                        },
+                        "author": {
+                            "@type": "Person",
+                            "name": post.author || "Equipe GuiaDeGeladeira"
+                        }
+                    }
+                })
             },
             {
                 "@type": "BreadcrumbList",

@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { Calendar, ShieldCheck, Clock, User, Share2, Info, Zap } from 'lucide-react';
 import { BottomNav } from "@/components/ui/BottomNav";
 import { ScrewHead } from "@/components/ui/ScrewHead";
-import { formatDate } from "@/lib/utils";
+import { formatDate, sanitizePrice } from "@/lib/utils";
 import { Header } from "@/components/ui/Header";
 import { Footer } from "@/components/ui/Footer";
 import { RelatedPosts } from "@/components/industrial/RelatedPosts";
@@ -98,8 +98,9 @@ export default async function PortatilReviewPage({ params }: ReviewPageProps) {
                     "offers": {
                         "@type": "Offer",
                         "priceCurrency": "BRL",
-                        "price": post.price ? post.price.split('-')[0].trim() : "0",
+                        "price": sanitizePrice(post.price || "0"),
                         "priceValidUntil": "2026-12-31",
+                        "url": `https://guiadegeladeira.com.br/portatil/${slug}`,
                         "availability": "https://schema.org/InStock",
                         "shippingDetails": {
                             "@type": "OfferShippingDetails",
@@ -147,7 +148,16 @@ export default async function PortatilReviewPage({ params }: ReviewPageProps) {
                         },
                         "author": {
                             "@type": "Person",
-                            "name": post.author || "Equipe GuiaDeGeladeira"
+                            "name": post.author || "Equipe GuiaDeGeladeira",
+                            "url": "https://guiadegeladeira.com.br/legal/sobre"
+                        },
+                        "publisher": {
+                            "@type": "Organization",
+                            "name": "Guia de Geladeira",
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": "https://guiadegeladeira.com.br/logo.png"
+                            }
                         }
                     }
                 })

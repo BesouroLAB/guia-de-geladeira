@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { Calendar, ShieldCheck, Clock, User, Share2, Info } from 'lucide-react';
 import { BottomNav } from "@/components/ui/BottomNav";
 import { ScrewHead } from "@/components/ui/ScrewHead";
-import { formatDate } from "@/lib/utils";
+import { formatDate, sanitizePrice } from "@/lib/utils";
 import { Header } from "@/components/ui/Header";
 import { Footer } from "@/components/ui/Footer";
 import { RelatedPosts } from "@/components/industrial/RelatedPosts";
@@ -100,8 +100,9 @@ export default async function ReviewPage({ params }: ReviewPageProps) {
                     "offers": {
                         "@type": "Offer",
                         "priceCurrency": "BRL",
-                        "price": post.price ? post.price.split('-')[0].trim() : "0", // Rough estimate for schema
+                        "price": sanitizePrice(post.price || "0"),
                         "priceValidUntil": "2026-12-31",
+                        "url": `https://guiadegeladeira.com.br/caminhao/${slug}`,
                         "availability": "https://schema.org/InStock",
                         "shippingDetails": {
                             "@type": "OfferShippingDetails",
@@ -159,13 +160,6 @@ export default async function ReviewPage({ params }: ReviewPageProps) {
                                 "@type": "ImageObject",
                                 "url": "https://guiadegeladeira.com.br/logo.png"
                             }
-                        },
-                        "mainEntityOfPage": {
-                            "@type": "WebPage",
-                            "@id": `https://guiadegeladeira.com.br/caminhao/${slug}`
-                        },
-                        "isPartOf": {
-                            "@id": "https://guiadegeladeira.com.br/#website"
                         }
                     }
                 })

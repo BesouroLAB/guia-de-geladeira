@@ -6,12 +6,28 @@ date: "2026-01-20"
 cluster: "usadas"
 author: "Equipe GuiaDeGeladeira"
 coverImage: "/img/blog/geladeira-usada-tabela.jpg"
-tags: ["Preço", "Geladeira Usada", "Resfriar", "Elber"]
+tags: ["Preço", "Tabela", "Usadas", "Compra e Venda", "Valores"]
+faq:
+  - question: "Quanto pagar em uma geladeira Resfriar 31L usada?"
+    answer: "Dependendo do estado e do ano, o valor justo gira entre R$ 1.100 (bem usada) e R$ 1.600 (estado de nova com acessórios)."
+  - question: "Geladeira de caminhão usada desvaloriza muito?"
+    answer: "Não. Elas seguram muito bem o preço devido à alta demanda e durabilidade. Geralmente perdem apenas 30% do valor de uma nova após 1 ou 2 anos."
+  - question: "Vale a pena comprar geladeira de 18L de segunda mão?"
+    answer: "Vale se o preço estiver abaixo de R$ 1.200. Como a nova custa cerca de R$ 1.900, um desconto de 40% compensa o risco da falta de garantia."
+  - question: "O que desvaloriza uma geladeira usada?"
+    answer: "Gabinete amassado ou enferrujado, borrachas rasgadas, falta de cabos originais e barulho excessivo no compressor (sinal de fim de vida útil)."
+  - question: "Onde encontrar os melhores preços de geladeiras usadas?"
+    answer: "Marketplace do Facebook, OLX e grupos de caminhoneiros no WhatsApp costumam ter as melhores ofertas direto com o proprietário."
+  - question: "Geladeira Elber usada vale mais que a Resfriar?"
+    answer: "Geralmente sim, pela fama de robustez do gabinete de aço e pelo motor que costuma ter garantia de fábrica mais longa (2 anos)."
+  - question: "Como negociar o preço de uma geladeira usada?"
+    answer: "Peça para ver a geladeira ligada e gelando. Se não puder testar na hora, peça um desconto maior para cobrir uma possível carga de gás (R$ 300)."
 ---
 
 import { AlertBox } from '@/components/industrial/AlertBox'
 import { HazardButton } from '@/components/industrial/HazardButton'
 import { ProsCons } from '@/components/industrial/ProsCons'
+import { FAQBox } from '@/components/industrial/FAQBox'
 
 {/* --- INTRODUÇÃO --- */}
 
@@ -68,6 +84,7 @@ Pode-se achar geladeiras de caminhões batidos (PT).
 
 ---
 
+<FAQBox />
 <AlertBox type="danger" title="Regra de Ouro Anti-Golpe">
 NUNCA, em hipótese alguma, faça PIX antecipado para "reservar" ou para "pagar o frete". 99% desses casos são estelionato. Pagamento só com a geladeira na mão.
 </AlertBox>

@@ -6,12 +6,28 @@ date: "2026-01-20"
 cluster: "motorhome"
 author: "Equipe GuiaDeGeladeira"
 coverImage: "/img/blog/calculo-solar-capa.jpg"
-tags: ["Energia Solar", "Cálculo", "Bateria", "12v"]
+tags: ["Energia Solar", "Cálculo", "Motorhome", "Bateria", "12v"]
+faq:
+  - question: "Quantos painéis solares preciso para uma geladeira 12V?"
+    answer: "Para uma geladeira de 65L, recomenda-se no mínimo um painel de 150W. Isso garante carga suficiente para o consumo diário e reserva para dias nublados."
+  - question: "Qual a bateria ideal para energia solar com geladeira?"
+    answer: "O recomendado é uma bateria estacionária de pelo menos 100Ah ou baterias de Lítio (LiFePO4) de 50Ah para garantir autonomia durante a noite."
+  - question: "Geladeira 12V funciona direto no painel solar?"
+    answer: "Não. Você SEMPRE deve usar um controlador de carga (PWM ou MPPT) entre o painel e a bateria, e a geladeira ligada na bateria ou na saída 'load'."
+  - question: "O que é melhor: controlador solar PWM ou MPPT?"
+    answer: "O MPPT é até 30% mais eficiente, sendo ideal para tirar o máximo proveito dos painéis em dias nublados ou com sombras parciais."
+  - question: "Como calcular a autonomia da geladeira no solar?"
+    answer: "Divida a capacidade da bateria (Ah) pelo consumo médio da geladeira (ex: 2Ah). Uma bateria de 100Ah (usando 50%) daria 25 horas de autonomia."
+  - question: "Painel flexível ou rígido para motorhome?"
+    answer: "Painéis rígidos duram mais e dissipam melhor o calor. Painéis flexíveis são bons para telhados curvos onde o peso e a aerodinâmica são críticos."
+  - question: "O sol de um dia carrega a bateria para a noite toda?"
+    answer: "Sim, se o sistema estiver bem dimensionado. Um painel de 155W gera cerca de 50-60Ah por dia, o que cobre o consumo de 40Ah da geladeira com folga."
 ---
 
 import { AlertBox } from '@/components/industrial/AlertBox'
 import { HazardButton } from '@/components/industrial/HazardButton'
 import { TechSpecs } from '@/components/industrial/TechSpecs'
+import { FAQBox } from '@/components/industrial/FAQBox'
 
 {/* --- INTRODUÇÃO --- */}
 
@@ -66,6 +82,7 @@ Recomendamos Bateria Estacionária (Freedom, Moura Solar) de Ciclo Profundo.
 
 ---
 
+<FAQBox />
 <AlertBox type="warning" title="Dica de Ouro sobre Cabos">
 Não economize no fio que vai da placa ao controlador e do controlador à bateria. Use cabos de **6mm²** se a distância for curta (até 3m) ou **10mm²** se for maior. Fio fino esquenta e joga energia fora.
 </AlertBox>

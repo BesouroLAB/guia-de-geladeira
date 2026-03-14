@@ -113,6 +113,13 @@ export default async function ReviewPage({ params }: ReviewPageProps) {
                 "isPartOf": {
                     "@id": "https://guiadegeladeira.com.br/#website"
                 },
+                ...(post.faq && post.faq.length > 0 && {
+                    "mainEntityOfPage": {
+                        "@type": "WebPage",
+                        "@id": `https://guiadegeladeira.com.br/usadas/${slug}#faq`
+                    },
+                    "breadcrumb": { "@id": `https://guiadegeladeira.com.br/usadas/${slug}#breadcrumb` }
+                }),
                 ...(post.rating && {
                     "brand": {
                         "@type": "Brand",
@@ -294,6 +301,8 @@ export default async function ReviewPage({ params }: ReviewPageProps) {
                         source={post.content}
                         components={{
                             ...MdxComponents,
+                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                            FAQBox: (props: any) => <MdxComponents.FAQBox questions={post.faq} {...props} />,
                             BestOffer,
                         }}
                         options={{

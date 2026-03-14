@@ -164,6 +164,18 @@ export default async function ReviewPage({ params }: ReviewPageProps) {
                     }
                 })
             },
+            ...(post.faq && post.faq.length > 0 ? [{
+                "@type": "FAQPage",
+                "@id": `https://guiadegeladeira.com.br/caminhao/${slug}#faq`,
+                "mainEntity": post.faq.map((q: any) => ({
+                    "@type": "Question",
+                    "name": q.question,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": q.answer
+                    }
+                }))
+            }] : []),
             {
                 "@type": "BreadcrumbList",
                 "itemListElement": [
@@ -278,6 +290,8 @@ export default async function ReviewPage({ params }: ReviewPageProps) {
                         source={post.content}
                         components={{
                             ...MdxComponents,
+                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                            FAQBox: (props: any) => <MdxComponents.FAQBox questions={post.faq} {...props} />,
                             // eslint-disable-next-line @typescript-eslint/no-explicit-any
                             BestOffer: (props: any) => (
                                 <BestOffer 

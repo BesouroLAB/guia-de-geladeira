@@ -7,6 +7,21 @@ cluster: "caminhao"
 author: "Tiago Fernandes"
 coverImage: "/img/raw-products/resfriar/resfriar-31l-frontal.jpg"
 tags: ["Resfriar", "Análise Técnica", "12v", "Quadrivolt"]
+faq:
+  - question: "A Resfriar 31L cabe em qualquer caminhão?"
+    answer: "Sim, ela possui medidas universais que se encaixam no banco do carona ou console da maioria das cabines (Scania, Volvo, Mercedes, VW, etc)."
+  - question: "Qual a temperatura mínima da Resfriar 31L?"
+    answer: "Ela atinge até -21ºC, funcionando como um verdadeiro freezer para congelar carnes e manter alimentos por longos períodos."
+  - question: "A Resfriar 31L é Quadrivolt automática?"
+    answer: "Sim, ela funciona em 12V, 24V (bateria) e em 110V ou 220V (tomada residencial) sem necessidade de chaves manuais."
+  - question: "Como funciona a proteção de bateria (L, M, H)?"
+    answer: "É um sistema que desliga a geladeira se a voltagem da bateria cair. O modo 'H' (High) oferece a maior segurança para garantir a partida do motor."
+  - question: "Cabe garrafa PET de 2 litros na Resfriar 31L?"
+    answer: "Sim, o projeto interno permite que garrafas de 2 litros fiquem em pé ou deitadas com facilidade."
+  - question: "Onde encontrar assistência técnica para geladeiras Resfriar?"
+    answer: "A Resfriar tem a maior rede de assistência do Brasil, com pontos em quase todas as cidades polo de transporte e em concessionárias."
+  - question: "A Resfriar 31L gasta muita energia?"
+    answer: "Não, o consumo médio é muito baixo (cerca de 0.82Ah em 12V). Ela consome apenas quando o compressor está em funcionamento."
 ---
 
 import { ProductScore } from '@/components/industrial/ProductScore'
@@ -111,35 +126,4 @@ Se o seu objetivo é **paz de espírito**. A Resfriar 31L não é a mais barata,
 
 ---
 
-<FAQBox 
-  questions={[
-    {
-      question: "Cabe no Mercedes 1620 ou VW Constellation?",
-      answer: "Sim, as medidas são universais para cabines brasileiras. Cabe perfeitamente no banco do carona ou no espaço entre bancos (console)."
-    },
-    {
-      question: "Qual o melhor nível de proteção de bateria (L, M, H)?",
-      answer: "Para caminhões (24v), use o nível 'H' (High) se a bateria estiver cansada. Se as baterias forem novas, o 'M' (Medium) oferece mais tempo de geladeira ligada sem riscos."
-    },
-    {
-      question: "Pode deixar ligada enquanto o caminhão está desligado?",
-      answer: "Sim, por algumas horas. O isolamento mantém o gelo por cerca de 4 a 8 horas dependendo do calor. A proteção de voltagem impedirá que o motor descarregue totalmente."
-    },
-    {
-      question: "Geladeira Resfriar gasta muita bateria?",
-      answer: "Não. O consumo é similar ao de uma lanterna de farol quando o compressor está rodando. Como ele liga e desliga, o consumo médio é muito baixo."
-    },
-    {
-      question: "Como configurar a temperatura para não congelar a salada?",
-      answer: "Recomendamos deixar em +2ºC. Abaixo disso, as folhas encostadas nas paredes podem queimar pelo frio extremo."
-    },
-    {
-      question: "Onde fica a assistência técnica da Resfriar?",
-      answer: "A Resfriar possui uma das maiores redes do país, com pontos em quase todas as cidades polo de transporte e concessionárias de caminhões."
-    },
-    {
-      question: "Posso ligar na tomada de casa (110v/220v)?",
-      answer: "Sim, este modelo é Quadrivolt. Ela identifica a energia sozinha e muda o modo de operação sem você precisar mexer em nada."
-    }
-  ]}
-/>
+<FAQBox questions={frontmatter.faq} />

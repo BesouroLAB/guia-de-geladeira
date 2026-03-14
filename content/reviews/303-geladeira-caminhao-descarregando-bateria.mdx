@@ -7,7 +7,22 @@ slug: "geladeira-caminhao-descarregando-bateria"
 cluster: "tecnica"
 author: "Equipe GuiaDeGeladeira"
 coverImage: "/img/blog/bateria-arriada.jpg"
-tags: ["Bateria", "Consumo", "Mito", "Dicas"]
+tags: ["Bateria", "Consumo", "Manutenção", "Caminhão"]
+faq:
+  - question: "A geladeira do caminhão descarrega a bateria?"
+    answer: "Sim, se o caminhão ficar parado por muito tempo. Porém, elas possuem proteção térmica e de baixa voltagem que a desliga antes de impedir a partida do motor."
+  - question: "Quanto tempo a geladeira pode ficar ligada com motor parado?"
+    answer: "Em baterias de caminhão saudáveis (150Ah+), ela pode durar de 24 a 48 horas. Em carros (60Ah), dura entre 6 a 12 horas."
+  - question: "Como evitar que a geladeira zere a bateria?"
+    answer: "Configure a proteção de bateria no nível 'High' (H). Assim, ela desliga com uma voltagem segura para garantir a partida do veículo."
+  - question: "O que gasta mais: luz interna ou motor da geladeira?"
+    answer: "O motor representa 99% do consumo. A luz interna de LED é insignificante. O segredo é abrir a porta o menos possível."
+  - question: "Vale a pena ter bateria auxiliar para a geladeira?"
+    answer: "Sim, especialmente para quem faz paradas longas (final de semana). Uma bateria dedicada evita qualquer risco de ficar a pé na estrada."
+  - question: "Geladeira 12V consome quantos Ampères?"
+    answer: "O consumo médio gira em torno de 2A a 4A enquanto o compressor está ligado. Como ele liga e desliga, o consumo real por hora é menor."
+  - question: "O alternador carrega a bateria com a geladeira ligada?"
+    answer: "Sim, com o motor ligado o alternador supre o consumo da geladeira e ainda carrega a bateria simultaneamente."
 ---
 
 import { AlertBox } from '@/components/industrial/AlertBox'
@@ -93,37 +108,6 @@ A geladeira foi projetada para conviver com a bateria, não para competição. S
 
 ---
 
-## Perguntas Frequentes (FAQ)
+<FAQBox />
 
-<FAQBox 
-  questions={[
-    {
-      question: "Quanto tempo uma geladeira 12v pode ficar ligada com o motor desligado?",
-      answer: "Em média, de 24 a 48 horas, dependendo do estado da bateria e da temperatura externa. Geladeiras modernas com compressor consomem entre 1.5Ah e 2.5Ah por hora e possuem módulos que desligam automaticamente antes de descarregar a bateria por completo."
-    },
-    {
-      question: "Qual o fio ideal para ligar a geladeira do caminhão?",
-      answer: "A causa número um de problemas elétricos é a bitola fina. Recomendamos fio de 4mm² para distâncias curtas (até 2 metros), 6mm² para até 5 metros, e fio de 10mm² se a geladeira ficar a mais de 5 metros da bateria."
-    },
-    {
-      question: "A geladeira desliga sozinha para não acabar com a bateria?",
-      answer: "Sim. A maioria das geladeiras automotivas (como Resfriar e Elber) possui um módulo eletrônico com proteção de bateria. Quando a voltagem atinge o limite mínimo de segurança (ex: 22.8v num sistema 24v), ela corta a energia sozinha."
-    },
-    {
-      question: "É seguro ligar a geladeira direto no acendedor de cigarros?",
-      answer: "Não é recomendado para uso contínuo. O plugue do acendedor costuma gerar mau contato e a fiação original muitas vezes é fina (1.5mm a 2.5mm), o que causa queda de tensão, fazendo a geladeira apresentar erro (Erro E1 na Resfriar, por exemplo)."
-    },
-    {
-      question: "Geladeira termoelétrica descarrega a bateria mais rápido?",
-      answer: "Sim. Ao contrário da geladeira com compressor (motor), as caixas termoelétricas funcionam o tempo todo e não desligam sozinhas. Se você esquecer ligada com o motor desligado, ela consumirá a bateria até zerar."
-    },
-    {
-      question: "Por que minha geladeira liga, mas desarma logo em seguida?",
-      answer: "Geralmente isso indica fiação fina ou conexões frouxas (zinabre). Quando o motor tenta 'partir' (ligar), ele puxa um pico de energia. Se o cabo for fino, a voltagem cai abaixo do limite de segurança, e a geladeira desarma (Erro E1)."
-    },
-    {
-      question: "Uma geladeira no modo Turbo consome muito mais energia?",
-      answer: "No modo Turbo (ou MAX), o compressor gira na rotação máxima, consumindo mais amperes por hora. O ideal é deixar no modo Turbo enquanto dirige (o alternador gera a energia) e usar o modo ECO ou temperaturas mais brandas à noite quando o motor estiver desligado."
-    }
-  ]}
-/>
+

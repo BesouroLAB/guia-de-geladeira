@@ -7,7 +7,22 @@ cluster: "usadas"
 author: "Equipe GuiaDeGeladeira"
 isPillar: true
 coverImage: "/img/blog/geladeira-usada-inspecao.jpg"
-tags: ["Inpeção", "Geladeira Usada", "Dicas", "Resfriar"]
+tags: ["Geladeira Usada", "Checklist", "Inspecção", "Dicas", "Economia"]
+faq:
+  - question: "O que verificar ao comprar uma geladeira 12V usada?"
+    answer: "Verifique se o compressor parte sem estalos, se atinge temperatura negativa em menos de 30 min e se não há cheiro de queimado ou vazamento de óleo."
+  - question: "Como saber se o compressor da geladeira usada está bom?"
+    answer: "Ligue a geladeira e espere 15 minutos. Toque na placa fria interna: ela deve estar gelada por igual. Se apenas um canto gelar, pode haver falta de gás."
+  - question: "Geladeira usada com ferrugem vale a pena?"
+    answer: "Se for apenas externa no gabinete, sim (estética). Se houver ferrugem nas tubulações de cobre próximas ao compressor, fuja, pois indica vazamentos futuros."
+  - question: "É seguro comprar geladeira 12V de segunda mão?"
+    answer: "Sim, desde que você possa testar ligada. Evite comprar 'no estado' sem garantia de funcionamento, pois o conserto do compressor é caro."
+  - question: "Como testar a vedação da borracha da geladeira usada?"
+    answer: "Feche a porta com uma folha de papel entre a borracha e o gabinete. Se você puxar o papel e ele sair fácil, a borracha precisa ser trocada."
+  - question: "Marcas nacionais ou importadas usadas?"
+    answer: "Prefira marcas nacionais (Resfriar, Elber) mesmo usadas, pois você encontrará peças de reposição e assistência técnica muito mais fácil."
+  - question: "Qual a vida útil média de uma geladeira portátil?"
+    answer: "Se bem cuidada e ventilada, uma geladeira de compressor de boa qualidade pode durar de 8 a 12 anos sem grandes manutenções."
 ---
 
 import { AlertBox } from '@/components/industrial/AlertBox'
@@ -15,6 +30,7 @@ import { HazardButton } from '@/components/industrial/HazardButton'
 import { ProductScore } from '@/components/industrial/ProductScore'
 import { TechSpecs } from '@/components/industrial/TechSpecs'
 import { ProsCons } from '@/components/industrial/ProsCons'
+import { FAQBox } from '@/components/industrial/FAQBox'
 
 {/* --- INTRODUÇÃO: O RISCO E A OPORTUNIDADE --- */}
 
@@ -84,6 +100,8 @@ Olhe com atenção para estes detalhes que entregam o passado da geladeira:
 | **"No estado" / "Só por gás"** | R$ 500 - R$ 800 | Altíssimo | **Sucata.** Serve para tirar peças. |
 
 ---
+
+<FAQBox />
 
 <ProductScore 
   score="9.5" 

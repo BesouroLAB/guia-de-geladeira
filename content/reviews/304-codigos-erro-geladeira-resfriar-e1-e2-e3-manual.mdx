@@ -7,7 +7,22 @@ slug: "codigos-erro-geladeira-resfriar-e1-e2-e3-manual"
 cluster: "tecnica"
 author: "Equipe GuiaDeGeladeira"
 coverImage: "/img/blog/erro-painel-geladeira.jpg"
-tags: ["Manutenção", "Erro E1", "Erro E3", "Elber", "Resfriar", "Defeito"]
+tags: ["Erros", "Resfriar", "E1", "E2", "E3", "Manual"]
+faq:
+  - question: "O que significa erro E1 na geladeira Resfriar?"
+    answer: "O erro E1 indica baixa voltagem (tensão insuficiente). Geralmente causado por bateria fraca ou fiação muito fina com queda de tensão."
+  - question: "Como resolver o erro E2?"
+    answer: "O erro E2 indica problema no ventilador (ventoinha). Verifique se há sujeira travando as pás ou se o conector interno se soltou."
+  - question: "Erro E3 na Resfriar, o que é?"
+    answer: "O erro E3 indica falha na partida do compressor. Pode ser um bloqueio no sistema de gás ou falha na unidade eletrônica."
+  - question: "Minha geladeira Resfriar parou e aparece um código, o que fazer?"
+    answer: "Desligue-a da energia por 5 minutos e ligue novamente. Se o erro persistir, consulte a tabela de códigos e verifique a bateria e fiação."
+  - question: "O erro E5 tem conserto?"
+    answer: "O E5 indica superaquecimento da unidade eletrônica. Verifique se as grades de ventilação não estão obstruídas ou se o calor externo está excessivo."
+  - question: "Como resetar a geladeira Resfriar?"
+    answer: "Não há um botão de reset físico, mas desconectar da bateria e aguardar alguns minutos limpa erros temporários da memória."
+  - question: "Posso ignorar o erro E1 se a geladeira ainda gela?"
+    answer: "Não é recomendado, pois a flutuação de energia pode queimar a placa eletrônica. Verifique seus cabos de alimentação."
 ---
 
 import { AlertBox } from '@/components/industrial/AlertBox'
@@ -103,42 +118,7 @@ Um módulo novo custa cerca de **R$ 400 a R$ 600**, e a troca de um compressor p
   link="https://amzn.to/46W0AHq" 
 />
 
----
-
-### Perguntas Frequentes sobre Erros (FAQ)
-
-<FAQBox 
-  questions={[
-    {
-      question: "Minha geladeira mostra 'Lo' ou 'Low'. O que é?",
-      answer: "É o mesmo que o Erro E1. Significa 'Low Voltage' (Voltagem Baixa). Geralmente resolvida ligando o motor ou revisando as emendas dos fios."
-    },
-    {
-      question: "O erro E3 pode ser falta de gás?",
-      answer: "Raramente. Falta de gás faz a geladeira funcionar direto e não gelar nada. O E3 é um erro elétrico/mecânico do compressor tentando partir."
-    },
-    {
-      question: "Como apagar o erro do painel?",
-      answer: "A maioria dos erros das marcas Resfriar e Elber reseta automaticamente assim que o problema é corrigido. Se você arrumar a voltagem, o E1 some sozinho em segundos."
-    },
-    {
-      question: "Posso mudar a sensibilidade da proteção de bateria?",
-      answer: "Sim! A maioria tem níveis H (High), M (Medium) e L (Low). Se sua fiação for ruim, coloque no 'L' para a geladeira parar de desarmar por qualquer oscilação."
-    },
-    {
-      question: "O que significa o Erro E2 (2 piscadas) no painel?",
-      answer: "O Erro E2 indica falha na ventoinha do dissipador. Você precisa arredar a geladeira da parede e limpar o pó da hélice ou verificar se nada está tocando nela e travando a rotação."
-    },
-    {
-      question: "A geladeira Elber também avisa erro piscando a luz?",
-      answer: "Sim! Nas Elber (geralmente motor Danfoss/Secop), o LED de diagnóstico pisca em sequências: 1 vez a cada 4 segundos é bateria baixa, 3 vezes é compressor travado. A leitura é a mesma da Resfriar."
-    },
-    {
-      question: "Vale a pena consertar módulo com Erro E4?",
-      answer: "Depende da idade da geladeira. O Erro E4 (compressor não atinge RPM mínima) geralmente aponta defeito crônico no motor. Uma troca pode passar dos R$1.200, então avaliar a compra de um modelo novo é o ideal."
-    }
-  ]}
-/>
+<FAQBox />
 
 ---
 

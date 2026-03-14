@@ -8,6 +8,21 @@ author: "Equipe GuiaDeGeladeira"
 coverImage: "/img/raw-products/hent/hent-42l-frontal.jpg"
 tags: ["Mini Geladeira", "12v", "Portátil", "Uber", "Camping"]
 isPillar: true
+faq:
+  - question: "Qual a melhor geladeira portátil 12V em 2026?"
+    answer: "A Alpicool C15 é o melhor custo-benefício atual, enquanto a Resfriar 18L é a escolha mais segura para quem precisa de assistência técnica nacional garantida."
+  - question: "Geladeira termoelétrica realmente gela?"
+    answer: "Ela apenas resfria cerca de 18°C a 20°C abaixo da temperatura ambiente. Em dias muito quentes, ela não consegue manter bebidas trincando como um compressor."
+  - question: "Quanto tempo uma geladeira 12V pode ficar ligada no carro?"
+    answer: "Com o motor desligado, modelos de compressor duram de 4 a 12 horas dependendo da bateria. Elas possuem proteção para não deixar o carro sem partida."
+  - question: "Qual a diferença entre compressor e termoelétrica?"
+    answer: "O compressor gela ativamente (até -20°C) independente do calor externo. A termoelétrica depende da temperatura ambiente e apenas mantém o frio."
+  - question: "Geladeira portátil faz muito barulho?"
+    answer: "Modelos modernos são silenciosos, emitindo cerca de 40dB a 45dB, o que é comparável a uma geladeira doméstica e não costuma incomodar o sono."
+  - question: "Posso ligar minha geladeira portátil na tomada de casa?"
+    answer: "Sim, a maioria dos modelos atuais é Quadrivolt ou acompanha uma fonte externa para ligar em 110V ou 220V."
+  - question: "Qual o tamanho ideal de geladeira para Uber?"
+    answer: "Modelos entre 7 e 15 litros são os mais indicados por caberem entre os bancos ou no assoalho sem atrapalhar os passageiros."
 ---
 
 {/* --- INTRODUÇÃO --- */}
@@ -98,35 +113,4 @@ Para quem não pode ficar na mão. Se você viaja pelo Brasil, a Resfriar tem a 
 
 ---
 
-<FAQBox 
-  questions={[
-    {
-      question: "Qual a diferença real entre compressor e termoelétrica?",
-      answer: "O compressor gela de verdade, podendo congelar alimentos independente do calor de fora. A termoelétrica apenas resfria o interior em relação ao exterior, sendo ineficaz em dias muito quentes."
-    },
-    {
-      question: "Uma geladeira 12v descarrega a bateria do carro?",
-      answer: "Sim, se o carro ficar desligado por muito tempo. Modelos com compressor costumam ter proteção de voltagem, desligando automaticamente antes de zerar a bateria."
-    },
-    {
-      question: "Posso usar a geladeira 24h ligada no caminhão?",
-      answer: "Sim, desde que o caminhão rode diariamente ou você tenha um sistema de bateria auxiliar/solar para manter a carga."
-    },
-    {
-      question: "Geladeira da marca Hent é confiável?",
-      answer: "Sim, é uma marca que utiliza tecnologia similar à Alpicool, oferecendo excelente custo-benefício, embora a assistência técnica seja o ponto de atenção."
-    },
-    {
-      question: "Como limpar minha geladeira portátil corretamente?",
-      answer: "Use apenas pano úmido com detergente neutro. Nunca use jato de água ou produtos abrasivos, e sempre deixe secar totalmente antes de fechar."
-    },
-    {
-      question: "Qual o tamanho ideal para quem viaja sozinho?",
-      answer: "Para uma pessoa, entre 18 e 31 litros é o ideal. Cabe o básico para 3 a 4 dias de viagem sem ocupar espaço excessivo no veículo."
-    },
-    {
-      question: "Geladeira portátil faz muito barulho para dormir?",
-      answer: "Os modelos modernos com compressor são silenciosos (cerca de 40dB), similar a uma geladeira doméstica. O ruído é um zumbido baixo que raramente incomoda."
-    }
-  ]}
-/>
+<FAQBox questions={frontmatter.faq} />

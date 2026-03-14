@@ -9,9 +9,10 @@ interface FAQItem {
 interface FAQBoxProps {
     questions: FAQItem[];
     title?: string;
+    showSchema?: boolean;
 }
 
-export function FAQBox({ questions = [], title = "Perguntas Frequentes" }: FAQBoxProps) {
+export function FAQBox({ questions = [], title = "Perguntas Frequentes", showSchema = false }: FAQBoxProps) {
     // Schema.org JSON-LD for FAQPage
     const jsonLd = {
         "@context": "https://schema.org",
@@ -28,10 +29,12 @@ export function FAQBox({ questions = [], title = "Perguntas Frequentes" }: FAQBo
 
     return (
         <section className="my-8 rounded-xl border-2 border-slate-200 bg-white overflow-hidden shadow-sm not-prose">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
+            {showSchema && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                />
+            )}
 
             <div className="bg-slate-50 border-b border-slate-200 px-6 py-4 flex items-center gap-2">
                 <HelpCircle className="w-5 h-5 text-amber-500" />

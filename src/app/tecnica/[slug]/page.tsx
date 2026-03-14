@@ -112,8 +112,27 @@ export default async function TecnicaReviewPage({ params }: TecnicaReviewPagePro
                 },
                 "isPartOf": {
                     "@id": "https://guiadegeladeira.com.br/#website"
-                }
+                },
+                ...(post.faq && post.faq.length > 0 && {
+                    "mainEntityOfPage": {
+                        "@type": "WebPage",
+                        "@id": `https://guiadegeladeira.com.br/tecnica/${slug}#faq`
+                    },
+                    "breadcrumb": { "@id": `https://guiadegeladeira.com.br/tecnica/${slug}#breadcrumb` }
+                })
             },
+            ...(post.faq && post.faq.length > 0 ? [{
+                "@type": "FAQPage",
+                "@id": `https://guiadegeladeira.com.br/tecnica/${slug}#faq`,
+                "mainEntity": post.faq.map((q: any) => ({
+                    "@type": "Question",
+                    "name": q.question,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": q.answer
+                    }
+                }))
+            }] : []),
             {
                 "@type": "BreadcrumbList",
                 "@id": `https://guiadegeladeira.com.br/tecnica/${slug}#breadcrumb`,
@@ -229,6 +248,8 @@ export default async function TecnicaReviewPage({ params }: TecnicaReviewPagePro
                         source={post.content}
                         components={{
                             ...MdxComponents,
+                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                            FAQBox: (props: any) => <MdxComponents.FAQBox questions={post.faq} {...props} />,
                             // eslint-disable-next-line @typescript-eslint/no-explicit-any
                             BestOffer: (props: any) => (
                                 <BestOffer 

@@ -6,7 +6,22 @@ date: "2026-01-19"
 cluster: "tecnica"
 author: "Equipe GuiaDeGeladeira"
 coverImage: "/img/blog/teste-gas-geladeira.jpg"
-tags: ["Manutenção", "Gás", "Defeito", "Compressor"]
+tags: ["Manutenção", "Conserto", "Compressor", "Problemas"]
+faq:
+  - question: "Por que minha geladeira liga, mas não gela?"
+    answer: "O problema mais comum é falta de gás por vazamento ou compressor com válvulas internas danificadas. A ventoinha girar não garante que o gás esteja circulando."
+  - question: "Geladeira de caminhão precisa repor gás?"
+    answer: "Não. O sistema de refrigeração é selado. Se o gás saiu, é porque existe um furo ou trinca na tubulação que precisa ser soldado antes da recarga."
+  - question: "Quanto custa o conserto de uma geladeira 12V?"
+    answer: "Uma carga de gás simples custa entre R$ 200 e R$ 400. Já a troca da placa ou compressor pode variar de R$ 600 a R$ 1.200."
+  - question: "O compressor faz barulho mas não gela, o que pode ser?"
+    answer: "Pode ser o compressor 'travado' ou com partida difícil. Também pode ser falta total de fluído refrigerante (gás)."
+  - question: "Como saber se o gás da geladeira acabou?"
+    answer: "Se o compressor liga e o radiador (condensador) atrás da geladeira continua frio, é um sinal claro de que o gás não está circulando."
+  - question: "A placa da geladeira pode queimar e ela continuar ligando o LED?"
+    answer: "Sim. A placa tem circuitos diferentes para luz/display e para o compressor. O visor pode funcionar mesmo com a saída do compressor queimada."
+  - question: "Vale a pena consertar geladeira de caminhão antiga?"
+    answer: "Se o gabinete estiver em bom estado, trocar o compressor por um novo de 12V/24V moderno costuma ser muito mais barato que comprar uma nova."
 ---
 
 import { AlertBox } from '@/components/industrial/AlertBox'
@@ -84,37 +99,4 @@ Se o custo do reparo (peças + mão de obra) ultrapassar 40% do valor de uma gel
   store="Amazon.com.br"
 />
 
----
-
-<FAQBox 
-  questions={[
-    {
-      question: "Minha geladeira liga a luz, mas o motor não parte. O que pode ser?",
-      answer: "Pode ser baixa voltagem da bateria. Geladeiras 12v têm proteção: se a voltagem cai abaixo de 10.5V (em sistemas 12v), o motor não liga para não zerar a bateria do veículo."
-    },
-    {
-      question: "Vi fumaça saindo da parte traseira, o que eu faço?",
-      answer: "Desligue imediatamente da tomada. Pode ser um curto no módulo conversor ou superaquecimento do compressor devido à sujeira acumulada na ventoinha."
-    },
-    {
-      question: "O gás da geladeira de caminhão precisa ser trocado?",
-      answer: "Nunca. O gás R134a dura a vida útil da geladeira. Se parar de gelar, é porque furou a tubulação e o gás vazou para o ambiente."
-    },
-    {
-      question: "Como saber se o vazamento é interno ou externo?",
-      answer: "O técnico aplicará pressão com nitrogênio. Se a pressão cair nas tubulações internas (da 'parede' fria), o vazamento é interno e raramente tem conserto garantido."
-    },
-    {
-      question: "Geladeira fazendo barulho de 'água escorrendo' é normal?",
-      answer: "Sim, esse é o som do gás refrigerante voltando ao estado líquido no evaporador. É um som normal de funcionamento."
-    },
-    {
-      question: "Limpar com faca ou objeto pontiagudo estraga?",
-      answer: "Sim! Nunca use facas para tirar gelo. Você pode furar o evaporador (a placa de alumínio), causando vazamento imediato de gás e perda da geladeira."
-    },
-    {
-      question: "Quanto tempo dura uma carga de gás feita pelo técnico?",
-      answer: "Se o furo foi devidamente achado e soldado, a carga deve durar anos. Se o técnico apenas 'completou', vai vazar em poucos dias."
-    }
-  ]}
-/>
+<FAQBox />

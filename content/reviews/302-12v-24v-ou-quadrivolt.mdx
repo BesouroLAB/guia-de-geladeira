@@ -6,9 +6,24 @@ date: "2026-01-19"
 cluster: "tecnica"
 author: "Equipe GuiaDeGeladeira"
 coverImage: "/img/blog/voltagem-bateria.jpg"
-tags: ["Voltagem", "Quadrivolt", "Bateria", "Elétrica"]
+tags: ["Tensão", "12v", "24v", "Quadrivolt", "Manual"]
+faq:
+  - question: "Minha geladeira é 12V ou 24V?"
+    answer: "A maioria das geladeiras veiculares modernas é bivolt automática, funcionando tanto em 12V quanto em 24V sem necessidade de chaves."
+  - question: "O que significa geladeira Quadrivolt?"
+    answer: "Significa que ela funciona em 12V e 24V (corrente contínua) e também em 110V e 220V (corrente alternada) através de uma fonte interna ou externa."
+  - question: "Posso ligar geladeira 12V direto no 24V?"
+    answer: "Se ela for automática (bivolt), sim. Se for um modelo antigo apenas 12V, você precisará de um conversor de voltagem (redutor) sob o risco de queimar o motor."
+  - question: "Qual a vantagem do sistema 24V para a geladeira?"
+    answer: "Em 24V, a fiação pode ser mais fina e há menos perda de energia por calor, tornando o sistema mais eficiente e estável."
+  - question: "Como saber se minha geladeira aceita 110V/220V?"
+    answer: "Verifique se ela possui uma entrada para cabo de força comum de três pinos ou se acompanha uma fonte externa preta similar à de notebook."
+  - question: "Geladeira bivolt gasta mais bateria?"
+    answer: "Não. O consumo depende do compressor e não da voltagem. Ela consumirá os mesmos Watts independente de estar ligada em 12V ou 24V."
+  - question: "Preciso trocar a bateria para usar geladeira Quadrivolt?"
+    answer: "Não. Ela foi feita para usar as baterias originais do veículo. Apenas verifique se a fiação suporta a carga."
 ---
-
+<FAQBox />
 import { AlertBox } from '@/components/industrial/AlertBox'
 import { HazardButton } from '@/components/industrial/HazardButton'
 

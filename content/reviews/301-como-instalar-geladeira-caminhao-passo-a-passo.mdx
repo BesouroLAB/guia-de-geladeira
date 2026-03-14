@@ -6,13 +6,29 @@ date: "2026-01-19"
 cluster: "tecnica"
 author: "Equipe GuiaDeGeladeira"
 coverImage: "/img/blog/instalacao-passo-a-passo.jpg"
-tags: ["Instalação", "Elétrica", "Segurança", "Tutorial"]
+tags: ["Instalação", "Caminhão", "Passo a Passo", "Elétrica"]
 isPillar: true
+faq:
+  - question: "Como instalar geladeira no caminhão passo a passo?"
+    answer: "A instalação envolve fixar a geladeira em local ventilado, passar fiação de bitola correta (mínimo 6mm²) e conectar direto à bateria com fusível de proteção."
+  - question: "Qual a bitola de fio ideal para geladeira 12V?"
+    answer: "Para distâncias até 3 metros, use fios de 6mm². Se a distância for maior, recomenda-se 10mm² para evitar queda de tensão, que faz a geladeira desligar."
+  - question: "Onde ligar o fio da geladeira no caminhão?"
+    answer: "O ideal é ligar direto nos bornes da bateria ou em uma régua de bornes protegida, evitando usar a fiação original do rádio ou acendedor de cigarros."
+  - question: "Geladeira de caminhão precisa de fusível?"
+    answer: "Sim, é obrigatório. Use um fusível de lâmina de 15A ou 20A o mais próximo possível da bateria para proteger contra curto-circuitos."
+  - question: "Posso instalar a geladeira dentro da cabine?"
+    answer: "Sim, desde que haja espaço para a circulação de ar nas grades do compressor. Se ficar sufocada, ela consumirá mais e gelará menos."
+  - question: "Como fixar a geladeira para não pular no trecho?"
+    answer: "Use suportes metálicos parafusados no assoalho ou cintas de amarração reforçadas. A vibração excessiva pode romper tubulações de gás com o tempo."
+  - question: "Preciso de um técnico para instalar minha geladeira?"
+    answer: "Se você tem conhecimentos básicos de elétrica (identificar positivo/negativo) e ferramentas, pode fazer sozinho seguindo nosso guia completo."
 ---
 
 import { AlertBox } from '@/components/industrial/AlertBox'
 import { ProsCons } from '@/components/industrial/ProsCons'
 import { HazardButton } from '@/components/industrial/HazardButton'
+import { FAQBox } from '@/components/industrial/FAQBox'
 
 {/* --- INTRODUÇÃO --- */}
 
@@ -56,10 +72,14 @@ Não economize no cobre. Fio fino gera resistência. Use a tabela abaixo baseada
 ## 2. O Fusível de Proteção
 Nunca, jamais ligue direto na bateria sem fusível. Se o fio descascar e encostar no chassi, você perde o caminhão.
 
-* **Onde colocar:** O mais próximo possível da bateria (no máximo a 15cm do polo positivo).
-* **Qual usar:** Fusível Lâmina (automotivo).
-    * Para 12v: Fusível de 15A a 20A.
-    * Para 24v: Fusível de 10A a 15A.
+*   **Onde colocar:** O mais próximo possível da bateria (no máximo a 15cm do polo positivo).
+*   **Qual usar:** Fusível Lâmina (automotivo).
+    *   Para 12v: Fusível de 15A a 20A.
+    *   Para 24v: Fusível de 10A a 15A.
+
+---
+
+<FAQBox />
 
 ---
 

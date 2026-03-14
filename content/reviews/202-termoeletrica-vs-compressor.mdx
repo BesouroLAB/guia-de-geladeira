@@ -7,6 +7,21 @@ cluster: "portatil"
 author: "Equipe GuiaDeGeladeira"
 coverImage: "/img/reviews/202-hero.png"
 tags: ["Guia Técnico", "12v", "Manutenção"]
+faq:
+  - question: "Por que minha geladeira 12V não gela?"
+    answer: "Provavelmente ela é termoelétrica e está tentando lutar contra um calor externo muito alto. Esses modelos apenas resfriam em relação ao ambiente."
+  - question: "Qual a vantagem do compressor sobre a termoelétrica?"
+    answer: "O compressor gela de verdade, podendo congelar alimentos independente do calor externo, além de consumir menos bateria por ser cíclico."
+  - question: "Consumo de bateria: compressor vs termoelétrica?"
+    answer: "A termoelétrica consome entre 4-5 Ah de forma constante. O compressor gela rápido e desliga, sendo muito mais eficiente para a vida útil da bateria."
+  - question: "Termoelétrica serve para o caminhão?"
+    answer: "Não é recomendado para o clima brasileiro. Na cabine de um caminhão ao sol, ela mal consegue manter a água fresca."
+  - question: "Como identificar se a geladeira é de compressor?"
+    answer: "Pelo preço (acima de R$ 1.300), pelo peso e pelo som do motor que liga e desliga. Ela também costuma atingir temperaturas negativas (-18°C)."
+  - question: "Dá para trocar o motor de uma termoelétrica por um compressor?"
+    answer: "Não, as tecnologias são totalmente diferentes. O gabinete de uma termoelétrica também não é feito para suportar as pressões de um sistema a gás."
+  - question: "O que é placa Peltier?"
+    answer: "É o componente eletrônico central das geladeiras termoelétricas que transfere calor de um lado para o outro através de eletricidade."
 ---
 
 import { ProsCons } from '@/components/industrial/ProsCons'
@@ -62,3 +77,7 @@ Guarde dinheiro e compre certo de primeira. Comprar errado duas vezes sai mais c
   text="VER GELADEIRAS COM COMPRESSOR (GELO REAL)" 
   link="https://amzn.to/46W0AHq" 
 />
+
+---
+
+<FAQBox />

@@ -6,7 +6,22 @@ date: "2026-01-19"
 cluster: "tecnica"
 author: "Equipe GuiaDeGeladeira"
 coverImage: "/img/blog/painel-digital-geladeira.jpg"
-tags: ["Configuração", "Economia", "Painel Digital", "Resfriar"]
+tags: ["Configuração", "Manual", "Resfriar", "Elber", "Gelo"]
+faq:
+  - question: "Qual a temperatura ideal para geladeira de caminhão?"
+    answer: "Para manter bebidas e lanches, o ideal é entre 2°C e 4°C. Se quiser congelar carnes, a temperatura deve ser configurada abaixo de -10°C."
+  - question: "Como fazer gelo na geladeira portátil 12V?"
+    answer: "Configure a temperatura para o mínimo possível (geralmente -18°C ou -20°C) e use formas de gelo pequenas para acelerar o processo."
+  - question: "O que é o modo ECO na geladeira portátil?"
+    answer: "O modo ECO reduz a rotação do compressor para economizar bateria, ideal para manter a temperatura durante a noite ou com o veículo parado."
+  - question: "Para que serve o modo MAX?"
+    answer: "O modo MAX aumenta a potência do compressor para gelar rapidamente itens que acabaram de ser colocados, consumindo mais energia temporariamente."
+  - question: "Como mudar de Celsius para Fahrenheit no display?"
+    answer: "Geralmente pressiona-se o botão 'Set' por alguns segundos até o visor piscar e então alterna-se usando as setas de temperatura."
+  - question: "A geladeira desliga quando atinge a temperatura?"
+    answer: "Sim, ela possui um termostato digital que desliga o motor ao atingir o setpoint e o religa quando a temperatura sobe 2 ou 3 graus."
+  - question: "Como configurar a proteção de bateria (L, M, H)?"
+    answer: "Pressione 'Set' e as setas simultaneamente para escolher. Use 'H' (High) se a geladeira estiver na bateria principal do caminhão para garantir a partida."
 ---
 
 import { AlertBox } from '@/components/industrial/AlertBox'
@@ -56,9 +71,9 @@ Se você ajusta para 0ºC e ela não baixa de 10ºC, seu compressor pode estar "
 Não adianta configurar certo e arrumar errado.
 Como as geladeiras portáteis não têm ventilador interno (são de placa fria na parede), a distribuição do frio não é uniforme.
 
-* **No Fundo (Mais Gelado):** É onde ficam as carnes, peixes e cervejas que você quer "véu de noiva". É a área mais fria porque o ar denso desce.
-* **No Meio:** Latas de refrigerante, leite e manteiga.
-* **No Topo / "Degrau" (Menos Gelado):** Em modelos como a Resfriar 31L, existe um degrau em cima do motor. Ali é a "Gaveta de Legumes". Coloque **Frutas, Verduras e Ovos**. Se colocar alface no fundo, ela vai queimar com o gelo.
+*   **No Fundo (Mais Gelado):** É onde ficam as carnes, peixes e cervejas que você quer "véu de noiva". É a área mais fria porque o ar denso desce.
+*   **No Meio:** Latas de refrigerante, leite e manteiga.
+*   **No Topo / "Degrau" (Menos Gelado):** Em modelos como a Resfriar 31L, existe um degrau em cima do motor. Ali é a "Gaveta de Legumes". Coloque **Frutas, Verduras e Ovos**. Se colocar alface no fundo, ela vai queimar com o gelo.
 
 ---
 
@@ -75,12 +90,12 @@ Isso define com quantos Volts a geladeira desliga sozinha.
 
 **Qual escolher?**
 
-* **High (H3) - Proteção Máxima:** A geladeira desliga cedo (ex: 24.5v).
-    * *Use se:* Sua bateria está viciada ou velha. Garante a partida, mas a geladeira desliga muito à noite.
-* **Medium (H2) - Padrão de Fábrica:** O equilíbrio ideal (ex: 23.5v).
-    * *Use se:* Tudo está normal.
-* **Low (H1) - Proteção Mínima:** A geladeira vai até o talo (ex: 21.5v).
-    * *Use se:* Você tem um banco de baterias auxiliar (estacionária) só para a geladeira. **Cuidado:** Se usar na bateria principal, o caminhão pode não pegar de manhã.
+*   **High (H3) - Proteção Máxima:** A geladeira desliga cedo (ex: 24.5v).
+    *   *Use se:* Sua bateria está viciada ou velha. Garante a partida, mas a geladeira desliga muito à noite.
+*   **Medium (H2) - Padrão de Fábrica:** O equilíbrio ideal (ex: 23.5v).
+    *   *Use se:* Tudo está normal.
+*   **Low (H1) - Proteção Mínima:** A geladeira vai até o talo (ex: 21.5v).
+    *   *Use se:* Você tem um banco de baterias auxiliar (estacionária) só para a geladeira. **Cuidado:** Se usar na bateria principal, o caminhão pode não pegar de manhã.
 
 ---
 
@@ -88,10 +103,10 @@ Isso define com quantos Volts a geladeira desliga sozinha.
 
 Algumas geladeiras (principalmente as chinesas e a linha nova da Resfriar) têm um botão "ECO/MAX".
 
-* **MAX (Turbo):** O compressor roda na rotação máxima. Gela rápido, mas faz mais barulho e gasta mais.
-    * *Quando usar:* Assim que colocar a carga quente ou ligar a geladeira pela primeira vez.
-* **ECO (Econômico):** O compressor roda suave. Mantém a temperatura gastando o mínimo.
-    * *Quando usar:* À noite, para dormir (menos barulho) e manter a temperatura estável.
+*   **MAX (Turbo):** O compressor roda na rotação máxima. Gela rápido, mas faz mais barulho e gasta mais.
+    *   *Quando usar:* Assim que colocar a carga quente ou ligar a geladeira pela primeira vez.
+*   **ECO (Econômico):** O compressor roda suave. Mantém a temperatura gastando o mínimo.
+    *   *Quando usar:* À noite, para dormir (menos barulho) e manter a temperatura estável.
 
 ---
 
@@ -123,39 +138,4 @@ Ajustando a temperatura correta, sua geladeira dura mais, suas baterias sofrem m
   link="https://amzn.to/46W0AHq" 
 />
 
----
-
-## Perguntas Frequentes (FAQ)
-
-<FAQBox 
-  questions={[
-    {
-      question: "Qual a temperatura ideal para gelar cerveja na geladeira 12V?",
-      answer: "Para a cerveja ficar no ponto ideal de 'véu de noiva' sem congelar a garrafa, deixe o termostato ajustado entre -2ºC e -4ºC. Coloque as latas e garrafas sempre no fundo, onde o ar frio se concentra."
-    },
-    {
-      question: "Por que minha geladeira congela os legumes?",
-      answer: "Legumes e folhas são muito sensíveis e congelam em temperaturas abaixo de +2ºC. A dica é guardar as verduras na parte mais alta da geladeira (ou na gaveta acima do compressor) e nunca no fundo."
-    },
-    {
-      question: "A geladeira no Modo Turbo gasta muita bateria?",
-      answer: "Sim. O compressor funciona em alta rotação, consumindo em média de 3.5 a 5.0 amperes por hora (contra 1.5Ah no modo Eco). Use o Turbo apenas enquanto o caminhão estiver ligado ou para resfriar bebidas quentes nas primeiras horas."
-    },
-    {
-      question: "Qual o melhor nível de proteção de bateria (L, M, H)?",
-      answer: "Para 90% dos usuários, o nível 'Medium' (M) ou H2 é o ideal. Ele desliga a geladeira quando a bateria chega em 23.5V, garantindo frio durante a noite e a partida do motor de manhã."
-    },
-    {
-      question: "Deixar a geladeira vazia gasta mais bateria?",
-      answer: "Sim! Geladeiras perdem frio mais rápido quando estão vazias, forçando o compressor a ligar várias vezes. Encha os espaços vazios com garrafas de água; a inércia térmica da água gelada vai poupar sua bateria."
-    },
-    {
-      question: "O que significa Erro E1 ao mudar a temperatura?",
-      answer: "O Erro E1 é um aviso de baixa voltagem. Quando você exige que a geladeira baixe muito a temperatura (ex: -10ºC), o compressor exige mais corrente. Se o fio de instalação for fino, a voltagem cai e a proteção da placa desarma a geladeira."
-    },
-    {
-      question: "Faz mal deixar a geladeira em -20ºC o tempo todo?",
-      answer: "Se a geladeira estiver carregada com carne que precisa ficar congelada por meses, não há problema, mas o gasto de bateria será absurdo. Para o uso diário, -20ºC só vai forçar o sistema e encurtar a vida útil do compressor."
-    }
-  ]}
-/>
+<FAQBox />

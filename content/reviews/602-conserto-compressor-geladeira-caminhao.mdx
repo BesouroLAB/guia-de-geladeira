@@ -6,12 +6,28 @@ date: "2026-01-20"
 cluster: "usadas"
 author: "Equipe GuiaDeGeladeira"
 coverImage: "/img/blog/conserto-compressor.jpg"
-tags: ["Manutenção", "Compressor", "Preço", "Serviço"]
+tags: ["Manutenção", "Compressor", "Conserto", "Reparo", "Técnico", "12v"]
+faq:
+  - question: "Quanto custa consertar o compressor da geladeira de caminhão?"
+    answer: "A troca de um compressor por um novo de 12V/24V custa entre R$ 800 e R$ 1.200, incluindo a carga de gás e mão de obra especializada."
+  - question: "Dá para trocar o compressor 110V por um 12V?"
+    answer: "Sim! Essa é uma transformação comum para quem quer usar um frigobar doméstico direto na bateria, mas exige a troca completa da unidade selada."
+  - question: "O compressor faz barulho mas não gela, o que pode ser?"
+    answer: "Pode ser que o pistão interno tenha se soltado do eixo ou que as válvulas de compressão não estejam mais vedando. Nesse caso, só a troca resolve."
+  - question: "Qual a diferença entre compressor BD35 e compressores chineses?"
+    answer: "O BD35 (Danfoss/Secop) é o padrão ouro de durabilidade e eficiência. Os chineses evoluíram muito e hoje oferecem performance similar por metade do preço."
+  - question: "O que queima o compressor da geladeira 12V?"
+    answer: "Fiação fina que causa quedas de tensão, falta de ventilação que superaquece o motor ou tentativas repetitivas de partida com bateria fraca."
+  - question: "Quanto tempo dura um compressor novo?"
+    answer: "Um compressor bem instalado com bitola de fio correta e fusível pode durar mais de 10 anos de uso contínuo no motorhome ou caminhão."
+  - question: "Como saber se o óleo do compressor vazou?"
+    answer: "Se você notar manchas de óleo escuro nas tubulações ou no fundo do compartimento do motor, há um vazamento de gás que levou o óleo junto."
 ---
 
 import { AlertBox } from '@/components/industrial/AlertBox'
 import { HazardButton } from '@/components/industrial/HazardButton'
 import { TechSpecs } from '@/components/industrial/TechSpecs'
+import { FAQBox } from '@/components/industrial/FAQBox'
 
 {/* --- INTRODUÇÃO --- */}
 
@@ -57,6 +73,7 @@ Se o gás vazou por dentro do gabinete (furo na tubulação de alumínio), muita
 
 ---
 
+<FAQBox />
 <AlertBox type="info" title="Dica de Negociação">
 Se for comprar usada com defeito, desconte o valor do conserto da tabela acima + 30% pela dor de cabeça. Exemplo: Geladeira boa vale 2.000. Defeito no módulo (500). Oferte R$ 1.000 no máximo.
 </AlertBox>

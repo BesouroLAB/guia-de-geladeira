@@ -6,7 +6,7 @@ interface ProsConsProps {
     cons: string[];
 }
 
-export function ProsCons({ pros, cons }: ProsConsProps) {
+export function ProsCons({ pros = [], cons = [] }: ProsConsProps) {
     return (
         <div className="grid md:grid-cols-2 gap-6 my-8">
             {/* Pros */}
@@ -16,7 +16,7 @@ export function ProsCons({ pros, cons }: ProsConsProps) {
                     Pontos Positivos
                 </h4>
                 <ul className="space-y-3">
-                    {pros.map((pro, i) => (
+                    {pros?.map((pro, i) => (
                         <li key={i} className="flex items-start gap-2 text-sm text-green-900 leading-relaxed">
                             <span className="block w-1.5 h-1.5 bg-green-500 rounded-full mt-1.5 shrink-0" />
                             {pro}
@@ -32,7 +32,7 @@ export function ProsCons({ pros, cons }: ProsConsProps) {
                     Pontos Negativos
                 </h4>
                 <ul className="space-y-3">
-                    {cons.map((con, i) => (
+                    {cons?.map((con, i) => (
                         <li key={i} className="flex items-start gap-2 text-sm text-red-900 leading-relaxed">
                             <span className="block w-1.5 h-1.5 bg-red-400 rounded-full mt-1.5 shrink-0" />
                             {con}

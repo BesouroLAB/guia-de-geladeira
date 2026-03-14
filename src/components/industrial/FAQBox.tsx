@@ -11,12 +11,12 @@ interface FAQBoxProps {
     title?: string;
 }
 
-export function FAQBox({ questions, title = "Perguntas Frequentes" }: FAQBoxProps) {
+export function FAQBox({ questions = [], title = "Perguntas Frequentes" }: FAQBoxProps) {
     // Schema.org JSON-LD for FAQPage
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "mainEntity": questions.map(q => ({
+        "mainEntity": questions?.map(q => ({
             "@type": "Question",
             "name": q.question,
             "acceptedAnswer": {
@@ -41,7 +41,7 @@ export function FAQBox({ questions, title = "Perguntas Frequentes" }: FAQBoxProp
             </div>
 
             <div className="divide-y divide-slate-100">
-                {questions.map((item, index) => (
+                {questions?.map((item, index) => (
                     <details key={index} className="group p-4 open:bg-amber-50/30 transition-colors">
                         <summary className="font-bold text-slate-800 cursor-pointer flex items-center justify-between list-none focus:outline-none">
                             <span className="pr-4">{item.question}</span>

@@ -5,7 +5,7 @@ interface TechSpecsProps {
     data: { label: string; value: string }[];
 }
 
-export function TechSpecs({ data }: TechSpecsProps) {
+export function TechSpecs({ data = [] }: TechSpecsProps) {
     return (
         <div className="relative overflow-hidden rounded-xl border-2 border-slate-200 my-10 bg-white industrial-shadow">
             {/* Texture Header */}
@@ -22,7 +22,7 @@ export function TechSpecs({ data }: TechSpecsProps) {
                 </h4>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
-                    {data.map((item, index) => (
+                    {data?.map((item, index) => (
                         <div key={index} className="flex flex-col gap-1 p-3 bg-slate-50/50 rounded-lg border border-slate-100 group">
                             <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest leading-none group-hover:text-blue-600 transition-colors">
                                 {item.label}

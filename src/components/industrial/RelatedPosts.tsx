@@ -8,8 +8,8 @@ interface RelatedPostsProps {
     currentSlug: string;
 }
 
-export function RelatedPosts({ posts, currentSlug }: RelatedPostsProps) {
-    const related = posts
+export function RelatedPosts({ posts = [], currentSlug }: RelatedPostsProps) {
+    const related = (posts || [])
         .filter(p => p.slug !== currentSlug)
         .slice(0, 3);
 

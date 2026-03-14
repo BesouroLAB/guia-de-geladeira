@@ -17,7 +17,39 @@ export interface Post {
     brand?: string;
     model?: string;
     price?: string;
+    amazonTag?: string; // Custom Amazon Tracking ID for this post
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [key: string]: any; // Allow loose typing for other frontmatter
+}
+
+/**
+ * Formata um link da Amazon com a Tag de rastreamento correta.
+ * Se a URL já tiver uma tag, ela será substituída.
+ */
+export function formatAmazonLink(baseUrl: string, tag: string = 'guiageladeira-20'): string {
+    try {
+        if (!baseUrl.includes('amazon.com')) return baseUrl;
+        
+        const url = new URL(baseUrl);
+        url.searchParams.set('tag', tag);
+        return url.toString();
+    } catch (e) {
+        return baseUrl;
+    }
+}
+
+/**
+ * Define a tag automática baseada no cluster do post.
+ */
+export function getDefaultTagByCluster(cluster?: string, isPillar?: boolean): string {
+    if (isPillar) return 'gg-ranking-20';
+    
+    switch (cluster) {
+        case 'tecnica': return 'gg-tecnica-20';
+        case 'reviews': return 'gg-review-20';
+        case 'motorhome': return 'gg-motorhome-20';
+        default: return 'guiageladeira-20';
+    }
 }
 
 export function getPostBySlug(slug: string, folder: string = 'reviews'): Post | null {

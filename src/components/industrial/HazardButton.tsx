@@ -15,8 +15,8 @@ export function HazardButton({ text, subtext, link, size = "normal" }: HazardBut
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
-                "group relative block w-full bg-amber-500 text-slate-950 rounded-xl shadow-[0_8px_0_rgb(146,64,14)] hover:shadow-[0_4px_0_rgb(146,64,14)] hover:translate-y-[4px] active:translate-y-[8px] active:shadow-none transition-all overflow-hidden my-12 border-2 border-slate-950/10",
-                size === "large" ? "py-7 px-10" : "py-5 px-8"
+                "group relative block w-full bg-amber-500 text-slate-950 rounded-xl shadow-[0_6px_0_rgb(146,64,14)] hover:shadow-[0_2px_0_rgb(146,64,14)] hover:translate-y-[4px] active:translate-y-[6px] active:shadow-none transition-all overflow-hidden my-8 border-2 border-black/10",
+                size === "large" ? "py-4 px-6" : "py-3 px-5"
             )}
         >
             {/* High Contrast Hazard Stripes Sides */}
@@ -29,15 +29,15 @@ export function HazardButton({ text, subtext, link, size = "normal" }: HazardBut
 
             <div className="relative z-10 flex flex-col items-center justify-center">
                 <span className={cn(
-                    "font-black font-teko uppercase tracking-tight flex items-center gap-4 leading-none",
-                    size === "large" ? "text-4xl md:text-5xl" : "text-2xl"
+                    "font-black font-teko uppercase tracking-tight flex items-center justify-center gap-4 leading-none text-center",
+                    size === "large" ? "text-3xl md:text-4xl" : "text-xl"
                 )}>
-                    {text} <ChevronRight className={cn("transition-transform group-hover:translate-x-2", size === "large" ? "w-10 h-10" : "w-6 h-6")} />
+                    {text} <ChevronRight className={cn("transition-transform group-hover:translate-x-2 shrink-0", size === "large" ? "w-10 h-10" : "w-6 h-6")} />
                 </span>
                 {subtext && (
-                    <div className="flex items-center gap-2 mt-2 bg-black/5 px-3 py-0.5 rounded-full border border-black/5">
-                        <ShoppingCart className="w-3.5 h-3.5" />
-                        <span className="text-[11px] font-black uppercase tracking-[0.25em]">
+                    <div className="flex items-center gap-2 mt-4 bg-black/10 px-4 py-1.5 rounded-full border border-black/10">
+                        <ShoppingCart className="w-4 h-4" />
+                        <span className="text-[12px] font-black uppercase tracking-[0.3em] opacity-80">
                             {subtext}
                         </span>
                     </div>

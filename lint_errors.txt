@@ -1,0 +1,176 @@
+
+> guia-de-geladeira@0.1.0 lint
+> eslint
+
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\scripts\add_data_driven_faqs.js
+  1:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  2:14  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\scripts\add_faqs.js
+  1:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  2:14  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\scripts\advanced-seo-audit.js
+  1:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  2:14  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  3:16  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\scripts\check_alt_tags.js
+  1:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  2:14  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  3:16  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\scripts\content-audit.js
+  1:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  2:14  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  3:16  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\scripts\fix_titles.js
+  1:12  error    A `require()` style import is forbidden      @typescript-eslint/no-require-imports
+  2:14  error    A `require()` style import is forbidden      @typescript-eslint/no-require-imports
+  3:7   warning  'matter' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  3:16  error    A `require()` style import is forbidden      @typescript-eslint/no-require-imports
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\scripts\link-checker.js
+   1:22  error    A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  20:14  warning  'error' is defined but never used        @typescript-eslint/no-unused-vars
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\scripts\technical-audit.js
+  1:22  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  2:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  3:14  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\scripts\update_images.js
+  1:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  2:14  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  3:16  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\app\api\ofertas\route.ts
+   4:7  warning  'AMAZON_PRODUCTS' is assigned a value but never used        @typescript-eslint/no-unused-vars
+  10:7  warning  'MERCADOLIVRE_PRODUCTS' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\app\caminhao\[slug]\page.tsx
+  281:48  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\app\caminhao\page.tsx
+  3:37  warning  'ShieldCheck' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\app\cozinha\[slug]\page.tsx
+  4:64  warning  'ChefHat' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\app\cozinha\page.tsx
+  1:8  warning  'Image' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\app\manutencao\[slug]\page.tsx
+    8:54  warning  'Info' is defined but never used          @typescript-eslint/no-unused-vars
+   83:19  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   99:52  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  111:42  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\app\manutencao\page.tsx
+  3:47  warning  'Cog' is defined but never used         @typescript-eslint/no-unused-vars
+  3:52  warning  'Info' is defined but never used        @typescript-eslint/no-unused-vars
+  3:58  warning  'FileText' is defined but never used    @typescript-eslint/no-unused-vars
+  3:68  warning  'Settings' is defined but never used    @typescript-eslint/no-unused-vars
+  3:78  warning  'Zap' is defined but never used         @typescript-eslint/no-unused-vars
+  9:10  warning  'formatDate' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\app\motorhome\[slug]\page.tsx
+    8:20  warning  'ShieldCheck' is defined but never used   @typescript-eslint/no-unused-vars
+    8:54  warning  'Info' is defined but never used          @typescript-eslint/no-unused-vars
+  297:48  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\app\motorhome\page.tsx
+  3:33  warning  'Star' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\app\portatil\[slug]\page.tsx
+  8:54  warning  'Info' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\app\portatil\page.tsx
+   3:35  warning  'ShieldCheck' is defined but never used  @typescript-eslint/no-unused-vars
+   3:48  warning  'Filter' is defined but never used       @typescript-eslint/no-unused-vars
+  10:10  warning  'cn' is defined but never used           @typescript-eslint/no-unused-vars
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\app\tecnica\[slug\]page.tsx
+  7:54  warning  'Info' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\app\tecnica\[slug]\page.tsx
+    8:54  warning  'Info' is defined but never used          @typescript-eslint/no-unused-vars
+  232:48  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\app\tecnica\page.tsx
+  3:44  warning  'Info' is defined but never used         @typescript-eslint/no-unused-vars
+  3:50  warning  'ShieldCheck' is defined but never used  @typescript-eslint/no-unused-vars
+  3:63  warning  'Sun' is defined but never used          @typescript-eslint/no-unused-vars
+  3:79  warning  'ZapOff' is defined but never used       @typescript-eslint/no-unused-vars
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\app\usadas\[slug]\page.tsx
+    8:20   warning  'ShieldCheck' is defined but never used                          @typescript-eslint/no-unused-vars
+    8:54   warning  'Info' is defined but never used                                 @typescript-eslint/no-unused-vars
+  332:106  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  332:114  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\app\usadas\page.tsx
+   3:37   warning  'Star' is defined but never used                                 @typescript-eslint/no-unused-vars
+  74:138  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  74:151  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\components\industrial\BestOffer.tsx
+   1:10  warning  'ShoppingCart' is defined but never used                                                                                                                                                                                                                                                 @typescript-eslint/no-unused-vars
+  39:25  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\components\industrial\GlossaryList.tsx
+   5:25  warning  'GlossaryTerm' is defined but never used  @typescript-eslint/no-unused-vars
+  68:40  warning  'idx' is defined but never used           @typescript-eslint/no-unused-vars
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\components\industrial\LinkCard.tsx
+  2:10  warning  'ChevronRight' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\components\industrial\PodcastPlayer.tsx
+   3:46  warning  'useCallback' is defined but never used  @typescript-eslint/no-unused-vars
+  14:5   warning  'FastForward' is defined but never used  @typescript-eslint/no-unused-vars
+  15:5   warning  'Rewind' is defined but never used       @typescript-eslint/no-unused-vars
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\components\industrial\ProductScore.tsx
+  1:23  warning  'ShieldCheck' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\components\industrial\ProsCons.tsx
+  2:10  warning  'cn' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\components\industrial\RelatedPosts.tsx
+  4:10  warning  'ChevronRight' is defined but never used   @typescript-eslint/no-unused-vars
+  4:24  warning  'MessageSquare' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\components\industrial\TechSpecs.tsx
+  1:10  warning  'cn' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\components\mdx\PriceAlert.tsx
+  2:10  warning  'cn' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\components\mdx\ProsCons.tsx
+  1:10  warning  'CheckCircle2' is defined but never used  @typescript-eslint/no-unused-vars
+  2:10  warning  'cn' is defined but never used            @typescript-eslint/no-unused-vars
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\components\offers\DynamicOffers.tsx
+  193:18  warning  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\components\ui\BottomNav.tsx
+  2:35  warning  'User' is defined but never used  @typescript-eslint/no-unused-vars
+  3:10  warning  'cn' is defined but never used    @typescript-eslint/no-unused-vars
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\components\ui\Footer.tsx
+   1:10   warning  'Snowflake' is defined but never used                            @typescript-eslint/no-unused-vars
+   1:21   warning  'Truck' is defined but never used                                @typescript-eslint/no-unused-vars
+  34:143  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  34:154  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\components\ui\Header.tsx
+  4:55  warning  'Info' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\Tiago\Desktop\PROJETOS\guia-de-geladeira\src\lib\posts.ts
+  22:20  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  36:14  warning  'e' is defined but never used             @typescript-eslint/no-unused-vars
+
+✖ 89 problems (36 errors, 53 warnings)
+

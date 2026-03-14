@@ -1,7 +1,7 @@
 ---
 id: 305
-title: "Geladeira Liga mas Não Gela: Defeitos Comuns"
-excerpt: "A luz acende, o motor vibra, mas a água continua quente. Aprenda a diferenciar um vazamento de gás de um sensor com defeito antes de chamar o técnico."
+title: "Geladeira Liga mas Não Gela: Guia de Diagnóstico"
+excerpt: "A luz acende, o motor vibra, mas a água continua quente. Aprenda a diagnosticar vazamentos e falhas de sensores antes de gastar com técnico."
 date: "2026-01-19"
 cluster: "tecnica"
 author: "Equipe GuiaDeGeladeira"
@@ -12,126 +12,109 @@ tags: ["Manutenção", "Gás", "Defeito", "Compressor"]
 import { AlertBox } from '@/components/industrial/AlertBox'
 import { HazardButton } from '@/components/industrial/HazardButton'
 import { ProsCons } from '@/components/industrial/ProsCons'
+import { FAQBox } from '@/components/industrial/FAQBox'
+import { TechSpecs } from '@/components/industrial/TechSpecs'
+import { BestOffer } from '@/components/industrial/BestOffer'
 
 {/* --- INTRODUÇÃO --- */}
 
 É o defeito mais frustrante: você escuta o motor funcionando, a luz interna acende, o painel marca a temperatura — mas a garrafa de água está morna.
 
-Diferente dos erros de painel (E1, E2), aqui a geladeira não dá pista nenhuma. É uma falha silenciosa. Você só descobre quando vai beber a água.
-
-Geralmente, isso se resume a dois culpados: **Vazamento de Gás** (sistema vazio) ou **Sensor/Termostato** (cabeça confusa). Vamos diagnosticar.
+Diferente dos erros de painel (E1, E2), aqui a geladeira não dá pista nenhuma. É uma falha silenciosa. Geralmente, isso se resume a dois culpados: **Vazamento de Gás** ou **Falha de Sensor**.
 
 ---
 
-## Passo 1: O Teste do "Condensador Quente" 🔥
+## Checklist de Diagnóstico Rápido
 
-O jeito mais rápido de saber se tem gás no sistema é pelo calor.
-A geladeira funciona retirando calor de dentro e jogando para fora.
+Antes de chamar um técnico ou pensar em trocar de geladeira, verifique estes 4 pontos:
 
-1.  Ligue a geladeira no máximo (Turbo/-21ºC).
-2.  Deixe rodar por 20 minutos.
-3.  Coloque a mão na grade lateral ou traseira (onde sai o ar).
-
-**O Veredito:**
-* **Se a grade estiver morna/quente:** O compressor está comprimindo o gás. O sistema está vivo. O problema provavelmente é **termostato** ou **borracha da porta** (vedação).
-* **Se a grade estiver fria (temperatura ambiente):** Más notícias. O compressor está rodando "em falso". Não tem gás para comprimir. É **vazamento**.
-
----
-
-## Cenário A: Falta de Gás (Vazamento) 💨
-
-Mito: *"O gás da geladeira acabou, precisa completar."*
-**Verdade:** Gás de geladeira não acaba, não vence e não gasta. Ele circula num sistema fechado e selado. Se o gás sumiu, **tem um furo**.
-
-**Sintomas:**
-* A geladeira foi perdendo eficiência aos poucos (gelava bem, depois só resfriava, agora nada).
-* Você encontra marcas de óleo nas tubulações (o óleo circula junto com o gás; onde vaza gás, vaza óleo).
-
-**O que fazer?**
-Não adianta só colocar gás ("dar uma carga"). O gás vai vazar de novo em 2 dias.
-Você precisa de um técnico especializado para:
-1.  Achar o furo (teste de nitrogênio).
-2.  Soldar o vazamento.
-3.  Fazer vácuo e carga nova de gás.
-
-<AlertBox type="danger" title="Custo do Reparo">
-Esse serviço custa caro (entre R$ 400 e R$ 800). Se sua geladeira for antiga ou genérica, as vezes compensa dar entrada numa nova.
-</AlertBox>
-
----
-
-## Cenário B: Termostato ou Sensor de Temperatura 🌡️
-
-Às vezes, a geladeira tem gás e o motor está bom, mas o "cérebro" dela acha que já está frio e desliga o compressor antes da hora.
-
-**Sintomas:**
-* A geladeira liga, funciona por 2 minutos e desliga, mas a água ainda está quente.
-* O painel mostra uma temperatura mentirosa (ex: marca -5ºC no painel, mas dentro está +15ºC).
-
-**A Causa:**
-O sensor de temperatura (uma pontinha de metal que fica dentro da geladeira) pode ter soltado da parede ou queimado.
-
-**O que fazer?**
-1.  **Verifique o Sensor:** Veja se a ponta do sensor encostou em alguma lata gelada ou gelo. Isso engana a leitura.
-2.  **Troca do Sensor:** É uma peça barata (R$ 50 a R$ 100) e fácil de trocar em assistências.
-
----
-
-## Cenário C: Bloqueio de Gelo (Não circula ar) ❄️
-
-Às vezes, a geladeira cria tanto gelo no evaporador (aquela grade interna) que o ar frio não consegue circular.
-
-**Sintomas:**
-* A parede do fundo cria uma crosta grossa de gelo.
-* O motor não desliga nunca.
-* As coisas próximas à parede congelam, mas as da porta ficam quentes.
-
-**Solução:**
-Desligue a geladeira, deixe a porta aberta por 24 horas para descongelar tudo e ligue novamente. Se voltar a acontecer rápido, a borracha da porta pode estar rasgada (entrando ar quente e umidade).
-
----
-
-## Resumo do Diagnóstico
-
-| Sintoma | Grade Traseira | Provável Defeito | Solução |
-| :--- | :--- | :--- | :--- |
-| Motor roda, não gela nada | Fria | **Vazamento de Gás** | Solda + Carga (Técnico) |
-| Motor liga e desliga rápido | Quente/Morna | **Sensor/Termostato** | Trocar Sensor |
-| Cria muito gelo no fundo | Quente | **Borracha/Vedação** | Trocar Borracha |
-
----
-
-## Conclusão: Consertar ou Trocar?
-
-**Sensor ou Borracha?** Conserte. Custa entre R$ 50 e R$ 200 e resolve em horas.
-
-**Vazamento de Gás na Tubulação Externa?** Conserto viável (R$ 400-800), mas avalie a idade da geladeira.
-
-**Vazamento de Gás no Gabinete Interno (parede de plástico)?** Infelizmente, é perda total. A tubulação está dentro do isolamento térmico — não dá pra acessar sem destruir a geladeira. É hora de aposentar.
-
-<HazardButton 
-  text="VER GELADEIRAS NOVAS EM OFERTA" 
-  link="/caminhao/101-melhores-geladeiras-caminhao-2026" 
-  size="large"
+<TechSpecs 
+  data={[
+    { label: "Grade Traseira Fria", value: "Cuidado: Provável vazamento de gás" },
+    { label: "Compressor 'Estalando'", value: "Falha de partida ou módulo eletrônico" },
+    { label: "Gelo Excessivo no Fundo", value: "Borracha da porta com defeito" },
+    { label: "Painel com Temperatura Errada", value: "Sensor de temperatura queimado" }
+  ]}
 />
 
 ---
 
-### Dúvidas Comuns de Manutenção
+## Passo 1: O Teste do Calor 🔥
+
+O jeito mais rápido de saber se tem gás no sistema é pelo calor. A geladeira funciona retirando calor de dentro e jogando para fora.
+
+1.  Ligue a geladeira no modo **Turbo** ou temperatura mínima (-21ºC).
+2.  Aguarde 30 minutos.
+3.  Coloque a mão na grade lateral ou na saída de ar do compressor.
+
+**O Resultado:**
+* **Grade Quente:** Ótimo sinal! O compressor está trabalhando e o gás está circulando. O defeito é simples (sensor ou vedação).
+* **Grade Fria:** Sinal de alerta. Se o compressor vibra mas não esquenta a grade, o gás provavelmente vazou.
+
+---
+
+## Cenário A: Vazamento de Gás 💨
+
+No mundo das geladeiras, o gás não "acaba". Ele é selado. Se não gela e a grade está fria, houve um **vazamento**.
+
+<AlertBox type="danger" title="Atenção ao Custo">
+Reparar um vazamento exige solda, teste de nitrogênio e nova carga de gás. O serviço varia de **R$ 450 a R$ 850**. Se o vazamento for interno (dentro da parede de plástico), a geladeira é considerada perda total.
+</AlertBox>
+
+---
+
+## Cenário B: Falha no Sensor de Temperatura 🌡️
+
+Às vezes a geladeira tem gás, mas o "cérebro" dela se engana. Ela acha que já está frio e desliga o motor.
+
+* **Sintoma:** O painel marca -10ºC, mas dentro a água está morna.
+* **Causa:** O sensor de temperatura (termistor) está enviando informações erradas.
+* **Solução:** Troca do sensor. É uma peça barata e o conserto é rápido.
+
+---
+
+## Vale a pena consertar ou é melhor trocar?
+
+Se o custo do reparo (peças + mão de obra) ultrapassar 40% do valor de uma geladeira nova, a recomendação técnica é a substituição. Modelos modernos são muito mais eficientes no consumo de bateria.
+
+<BestOffer 
+  productName="Geladeira Resfriar 31 Litros 12v"
+  price="R$ 2.690,00"
+  link="https://amzn.to/46W0AHq"
+  store="Amazon.com.br"
+/>
+
+---
 
 <FAQBox 
   questions={[
     {
-      question: "Minha geladeira Elber ou Resfriar liga o painel mas não gela. O que é?",
-      answer: "90% dos casos é falha na ventoinha (cooler) que refrigera o compressor ou insuficiência de gás. Se ouvir o motor tentando partir (tec-tec) e parando, pode ser o módulo controlador com defeito ou falta de bateria (voltagem baixa)."
+      question: "Minha geladeira liga a luz, mas o motor não parte. O que pode ser?",
+      answer: "Pode ser baixa voltagem da bateria. Geladeiras 12v têm proteção: se a voltagem cai abaixo de 10.5V (em sistemas 12v), o motor não liga para não zerar a bateria do veículo."
     },
     {
-      question: "Qual a temperatura ideal para economizar bateria?",
-      answer: "Mantenha entre -2ºC e +2ºC para conservação diária. Forçar -10ºC ou menos exige que o compressor trabalhe 100% do tempo, drenando suas baterias rapidamente sem necessidade real para carnes e bebidas comuns."
+      question: "Vi fumaça saindo da parte traseira, o que eu faço?",
+      answer: "Desligue imediatamente da tomada. Pode ser um curto no módulo conversor ou superaquecimento do compressor devido à sujeira acumulada na ventoinha."
     },
     {
-      question: "Posso completar o gás da geladeira em casa?",
-      answer: "Não recomendado. Diferente de pneus, o sistema de refrigeração é lacrado. Se falta gás, há um vazamento (furo). Apenas colocar gás sem soldar o furo é jogar dinheiro fora, pois vai vazar tudo novamente em dias."
+      question: "O gás da geladeira de caminhão precisa ser trocado?",
+      answer: "Nunca. O gás R134a dura a vida útil da geladeira. Se parar de gelar, é porque furou a tubulação e o gás vazou para o ambiente."
+    },
+    {
+      question: "Como saber se o vazamento é interno ou externo?",
+      answer: "O técnico aplicará pressão com nitrogênio. Se a pressão cair nas tubulações internas (da 'parede' fria), o vazamento é interno e raramente tem conserto garantido."
+    },
+    {
+      question: "Geladeira fazendo barulho de 'água escorrendo' é normal?",
+      answer: "Sim, esse é o som do gás refrigerante voltando ao estado líquido no evaporador. É um som normal de funcionamento."
+    },
+    {
+      question: "Limpar com faca ou objeto pontiagudo estraga?",
+      answer: "Sim! Nunca use facas para tirar gelo. Você pode furar o evaporador (a placa de alumínio), causando vazamento imediato de gás e perda da geladeira."
+    },
+    {
+      question: "Quanto tempo dura uma carga de gás feita pelo técnico?",
+      answer: "Se o furo foi devidamente achado e soldado, a carga deve durar anos. Se o técnico apenas 'completou', vai vazar em poucos dias."
     }
   ]}
 />

@@ -329,7 +329,7 @@ export default async function ReviewPage({ params }: ReviewPageProps) {
 
                         <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 bg-slate-800/50 p-3 rounded border border-slate-700">
                             <AlertTriangle className="w-4 h-4 text-yellow-500 shrink-0" />
-                            <span className="uppercase tracking-widest">Aviso: Geladeiras com compressor "lacrado" sem entrada de serviço valem mais.</span>
+                            <span className="uppercase tracking-widest">Aviso: Geladeiras com compressor &quot;lacrado&quot; sem entrada de serviço valem mais.</span>
                         </div>
                     </div>
                 </div>

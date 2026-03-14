@@ -1,4 +1,4 @@
-import { getPostBySlug, getAllPosts } from "@/lib/posts";
+import { getPostBySlug, getAllPosts, getDefaultTagByCluster } from "@/lib/posts";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { MdxComponents } from "@/components/mdx";
 import remarkGfm from "remark-gfm";
@@ -294,7 +294,13 @@ export default async function ReviewPage({ params }: ReviewPageProps) {
                         source={post.content}
                         components={{
                             ...MdxComponents,
-                            BestOffer,
+                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                            BestOffer: (props: any) => (
+                                <BestOffer 
+                                    {...props} 
+                                    amazonTag={post.amazonTag || getDefaultTagByCluster(post.cluster, post.isPillar)} 
+                                />
+                            ),
                         }}
                         options={{
                             mdxOptions: {

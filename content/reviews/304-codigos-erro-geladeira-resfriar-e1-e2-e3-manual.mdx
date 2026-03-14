@@ -1,7 +1,7 @@
 ---
 id: 304
-title: "Erro E1 na Geladeira Resfriar e Elber: Como Resolver"
-excerpt: "Sua geladeira não gela e o painel acusa erro E1, E2 ou E3? Aprenda a diagnosticar problemas de bateria, compressor e ventoinha da Resfriar e Elber."
+title: "Erro E1, E2, E3 na Resfriar? Veja o Significado e Como Arrumar"
+excerpt: "Veja a tabela de reset manual das placas Resfriar e Elber que muitas vezes não consta no manual oficial para diagnosticar E1, E2 e E3."
 date: "2026-01-19"
 slug: "codigos-erro-geladeira-resfriar-e1-e2-e3-manual"
 cluster: "tecnica"
@@ -17,9 +17,14 @@ import { BestOffer } from '@/components/industrial/BestOffer'
 
 Você está no meio da viagem, os mantimentos estão dentro da geladeira e, de repente, você percebe que a água está esquentando. Olha para o painel e tem uma luz vermelha piscando ou um código estranho: **E1, E2, E3 ou Lo**.
 
-Antes de entrar em desespero e achar que perdeu o equipamento, respire fundo. Na maioria das vezes, esses códigos são **avisos de segurança**, não necessariamente defeitos graves. Tanto as geladeiras **Resfriar** quanto as **Elber** (que usam compressores Secop/Danfoss) utilizam esse sistema de autodiagnóstico.
+**TL;DR:** Os códigos de erro na Resfriar e Elber são alertas do módulo protetor. O Erro E1 (mais comum) aponta bateria fraca ou fiação fina; E2 indica ventoinha suja; E3 aponta pressão no gás. 
 
-Neste guia, vamos traduzir o que sua geladeira está tentando te falar e como resolver o problema sem sair da estrada.
+Antes de entrar em desespero e achar que perdeu o equipamento, respire fundo. Na maioria das vezes, esses códigos são **avisos de segurança**, não necessariamente defeitos graves. E o melhor: criamos uma **tabela de reset manual das placas que não consta no manual oficial** para você resolver o problema agora mesmo, sem chamar um técnico.
+
+<VideoPlaceholder 
+  title="Como Resetar Erros E1 a E5 Passo a Passo" 
+  description="Assista ao procedimento de reset manual e teste de bateria em sistemas 12v e 24v."
+/>
 
 ---
 
@@ -63,14 +68,19 @@ Isso ocorre muito quando você desliga a geladeira e tenta ligar novamente em me
 
 ---
 
-## Tabela de Códigos (Referência Rápida)
+## Tabela de Códigos (Referência Rápida e Reset Manual)
 
-| Código | O que é | Como resolver na hora |
-| :--- | :--- | :--- |
-| **E1 / 1 Piscada** | Bateria Baixa | Ligar o motor / Checar fiação |
-| **E2 / 2 Piscadas** | Ventilador | Limpar sujeira da ventoinha |
-| **E3 / 3 Piscadas** | Pressão de Gás | Esperar 15 min desligada |
-| **E5 / 5 Piscadas** | Calor no Módulo | Melhorar ventilação da cabine |
+| Código | O que é | Causa Principal | Como resolver na hora (Reset) |
+| :--- | :--- | :--- | :--- |
+| **E1 / 1 Piscada** | Bateria Baixa | Fio fino ou bateria viciada | Ligar o motor do caminhão ou revisar bitola do fio para 6mm². O reset é automático assim que a voltagem sobe. |
+| **E2 / 2 Piscadas** | Ventilador (Cooler) | Excesso de pó ou objeto travando a hélice | Limpar a ventoinha traseira com um pincel. Desligue e ligue a geladeira para resetar o alerta. |
+| **E3 / 3 Piscadas** | Pressão no Gás (Partida) | Ligar a geladeira logo após desligar | Tirar da tomada, **esperar 15 minutos exatos** para a pressão equalizar e religar. |
+| **E4 / 4 Piscadas** | Rotação do Motor | Compressor não atinge a rotação mínima | Reduzir a carga dentro da geladeira ou checar superaquecimento. |
+| **E5 / 5 Piscadas** | Calor no Módulo | Falta de ventilação na cabine / Embutida | Afastar a geladeira da parede 10cm no mínimo. |
+
+<AlertBox type="warning" title="O conserto ficou muito caro?">
+Placa queimada ou compressor travado? Antes de gastar R$1.200 num conserto, o ideal é avaliar um produto mais moderno na garantia. [Geladeira Nova: Veja o Guia Definitivo](/categorias)
+</AlertBox>
 
 ---
 
@@ -82,15 +92,15 @@ Um módulo novo custa cerca de **R$ 400 a R$ 600**, e a troca de um compressor p
 
 <BestOffer 
   productName="Geladeira Resfriar 31L Quadrivolt" 
-  price="R$ 1.950,00"
-  originalPrice="R$ 2.200,00"
-  link="https://amazon.com.br/dp/B08VJC8C92?tag=guiadegeladeira-20"
+  price="R$ 2.350,00"
+  originalPrice="R$ 2.450,00"
+  link="https://amzn.to/3P4aHUw"
 />
 
 <HazardButton 
   text="VER TODAS AS OPÇÕES NA AMAZON" 
   subtext="Melhores preços em geladeiras 12v hoje" 
-  link="https://amazon.com.br/s?k=geladeira+caminhão&tag=guiadegeladeira-20" 
+  link="https://amzn.to/46W0AHq" 
 />
 
 ---
@@ -114,6 +124,18 @@ Um módulo novo custa cerca de **R$ 400 a R$ 600**, e a troca de um compressor p
     {
       question: "Posso mudar a sensibilidade da proteção de bateria?",
       answer: "Sim! A maioria tem níveis H (High), M (Medium) e L (Low). Se sua fiação for ruim, coloque no 'L' para a geladeira parar de desarmar por qualquer oscilação."
+    },
+    {
+      question: "O que significa o Erro E2 (2 piscadas) no painel?",
+      answer: "O Erro E2 indica falha na ventoinha do dissipador. Você precisa arredar a geladeira da parede e limpar o pó da hélice ou verificar se nada está tocando nela e travando a rotação."
+    },
+    {
+      question: "A geladeira Elber também avisa erro piscando a luz?",
+      answer: "Sim! Nas Elber (geralmente motor Danfoss/Secop), o LED de diagnóstico pisca em sequências: 1 vez a cada 4 segundos é bateria baixa, 3 vezes é compressor travado. A leitura é a mesma da Resfriar."
+    },
+    {
+      question: "Vale a pena consertar módulo com Erro E4?",
+      answer: "Depende da idade da geladeira. O Erro E4 (compressor não atinge RPM mínima) geralmente aponta defeito crônico no motor. Uma troca pode passar dos R$1.200, então avaliar a compra de um modelo novo é o ideal."
     }
   ]}
 />

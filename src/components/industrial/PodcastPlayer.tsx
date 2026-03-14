@@ -98,8 +98,8 @@ export const PodcastPlayer: React.FC<PodcastPlayerProps> = ({
     if (!isVisible) return null;
 
     return (
-        <div className="fixed bottom-24 left-4 right-4 z-[100] md:max-w-lg md:left-auto md:right-6 animate-in slide-in-from-bottom-10 duration-500">
-            <div className="relative bg-slate-900 border-2 border-slate-700 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden">
+        <div className="fixed bottom-20 md:bottom-24 left-4 right-4 z-[40] md:max-w-md md:left-auto md:right-6 animate-in slide-in-from-bottom-10 duration-500">
+            <div className="relative bg-slate-900 border border-slate-700/50 rounded-2xl shadow-[0_15px_40px_rgba(0,0,0,0.6)] overflow-hidden scale-95 md:scale-100 origin-bottom-right">
 
                 {/* Diamond Plate Pattern */}
                 <div className="absolute inset-0 bg-diamond-plate opacity-[0.05] pointer-events-none"></div>
@@ -132,12 +132,12 @@ export const PodcastPlayer: React.FC<PodcastPlayerProps> = ({
 
                         {/* Time Display */}
                         <div className="flex justify-between items-end mb-2">
-                            <span className="font-mono text-xs text-amber-500/80 tracking-tighter">{formatTime(currentTime)}</span>
+                            <span className="font-mono text-[10px] text-amber-500/80 tracking-tighter">{formatTime(currentTime)}</span>
                             <div className="flex flex-col items-center">
-                                <div className={`w-1.5 h-1.5 rounded-full ${isPlaying ? 'bg-red-600 animate-pulse' : 'bg-slate-700'}`}></div>
-                                <span className="text-[8px] font-black text-slate-500 uppercase mt-1">Status</span>
+                                <div className={`w-1 h-1 rounded-full ${isPlaying ? 'bg-red-600 animate-pulse' : 'bg-slate-700'}`}></div>
+                                <span className="text-[6px] font-black text-slate-500 uppercase mt-0.5">Status</span>
                             </div>
-                            <span className="font-mono text-xs text-slate-500">{formatTime(duration)}</span>
+                            <span className="font-mono text-[10px] text-slate-500">{formatTime(duration)}</span>
                         </div>
 
                         {/* Custom Progress Bar */}
@@ -153,22 +153,18 @@ export const PodcastPlayer: React.FC<PodcastPlayerProps> = ({
                         </div>
 
                         {/* Controls Row */}
-                        <div className="flex items-center justify-center gap-6">
+                        <div className="flex items-center justify-center gap-5">
                             <button onClick={() => skip(-10)} className="text-slate-400 hover:text-white transition-all transform active:scale-90">
-                                <RotateCcw className="w-6 h-6" />
-                                <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 text-[8px] font-bold">10s</span>
+                                <RotateCcw className="w-5 h-5" />
                             </button>
-
                             <button
                                 onClick={togglePlay}
-                                className="w-14 h-14 bg-white hover:bg-amber-500 rounded-full flex items-center justify-center text-slate-900 transition-all transform active:scale-95 shadow-xl"
+                                className="w-12 h-12 bg-white hover:bg-amber-500 rounded-full flex items-center justify-center text-slate-900 transition-all transform active:scale-95 shadow-xl"
                             >
-                                {isPlaying ? <Pause className="w-8 h-8 fill-current" /> : <Play className="w-8 h-8 ml-1 fill-current" />}
+                                {isPlaying ? <Pause className="w-6 h-6 fill-current" /> : <Play className="w-6 h-6 ml-1 fill-current" />}
                             </button>
-
                             <button onClick={() => skip(10)} className="text-slate-400 hover:text-white transition-all transform active:scale-90 relative">
-                                <RotateCw className="w-6 h-6" />
-                                <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 text-[8px] font-bold">10s</span>
+                                <RotateCw className="w-5 h-5" />
                             </button>
                         </div>
                     </div>

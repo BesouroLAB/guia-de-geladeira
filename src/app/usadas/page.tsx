@@ -71,7 +71,7 @@ export default function UsadasPage() {
                             <h4 className="text-2xl font-black font-teko uppercase leading-none mb-4 flex items-center gap-2">
                                 <AlertTriangle className="w-6 h-6 text-yellow-500" /> Cuidado!
                             </h4>
-                            <p className="text-xs text-slate-300 mb-6 leading-relaxed">Nunca compre geladeira sem ver a grade esquentar. "Só botar gás" é cilada.</p>
+                            <p className="text-xs text-slate-300 mb-6 leading-relaxed">Nunca compre geladeira sem ver a grade esquentar. &quot;Só botar gás&quot; é cilada.</p>
                             <Link href="/usadas/geladeira-caminhao-usada-guia-inspecao" className="block text-center py-3 bg-yellow-500 text-slate-950 rounded font-black font-teko uppercase tracking-widest text-sm hover:scale-105 transition-transform">Ler Guia Completo</Link>
                         </div>
                     </aside>

@@ -7,6 +7,24 @@ const nextConfig: NextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.resfriar.com.br',
+      },
+      {
+        protocol: 'https',
+        hostname: 'resfriar.com.br',
+      },
+      {
+        protocol: 'https',
+        hostname: 'amzn.to',
+      },
+      {
+        protocol: 'https',
+        hostname: 'm.media-amazon.com',
+      }
+    ],
   },
   async redirects() {
     return [

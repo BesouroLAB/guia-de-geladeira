@@ -80,7 +80,7 @@ export default async function ManutencaoReviewPage({ params }: ManutencaoReviewP
         .slice(0, 3);
 
     // JSON-LD Structured Data
-    const jsonLd: any = {
+    const jsonLd: Record<string, unknown> = {
         "@context": "https://schema.org",
         "@type": post.schemaType === 'FAQ' ? "FAQPage" : post.schemaType === 'HowTo' ? "HowTo" : "Article",
         "headline": post.title,
@@ -96,7 +96,7 @@ export default async function ManutencaoReviewPage({ params }: ManutencaoReviewP
 
     // Add FAQ specific structure
     if (post.schemaType === 'FAQ' && post.questions) {
-        jsonLd.mainEntity = post.questions.map((q: any) => ({
+        jsonLd.mainEntity = post.questions.map((q: Record<string, unknown>) => ({
             "@type": "Question",
             "name": q.question,
             "acceptedAnswer": {
@@ -108,7 +108,7 @@ export default async function ManutencaoReviewPage({ params }: ManutencaoReviewP
 
     // Add HowTo specific structure
     if (post.schemaType === 'HowTo' && post.steps) {
-        jsonLd.step = post.steps.map((s: any) => ({
+        jsonLd.step = post.steps.map((s: Record<string, unknown>) => ({
             "@type": "HowToStep",
             "name": s.name,
             "text": s.text,

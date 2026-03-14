@@ -7,9 +7,17 @@ interface BestOfferProps {
     originalPrice?: string;
     link: string;
     store?: string;
+    amazonTag?: string;
+    imageUrl?: string;
 }
 
-export function BestOffer({ productName, price, originalPrice, link, store = "Amazon.com.br" }: BestOfferProps) {
+export function BestOffer({ productName, price, originalPrice, link, store = "Amazon.com.br", amazonTag, imageUrl }: BestOfferProps) {
+    // Process Amazon Link tracking
+    const isAmazon = link.includes('amazon.com.br') || link.includes('amzn.to');
+    const finalLink = isAmazon && amazonTag 
+        ? `${link}${link.includes('?') ? '&' : '?'}tag=${amazonTag}`
+        : link;
+
     return (
         <div className="mt-12 relative overflow-hidden bg-slate-100 rounded-2xl border-2 border-slate-300 shadow-metallic group">
             {/* Texture Background */}
@@ -24,13 +32,25 @@ export function BestOffer({ productName, price, originalPrice, link, store = "Am
             {/* Header Flare */}
             <div className="h-2 w-full bg-[repeating-linear-gradient(-45deg,#f59e0b,#f59e0b_10px,#000_10px,#000_20px)] opacity-50"></div>
 
-            <div className="p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
+            <div className="p-6 md:p-10 flex flex-col md:flex-row items-center gap-6 md:gap-12">
+                {/* Product Image (Optional) */}
+                {imageUrl && (
+                    <div className="w-48 h-48 md:w-56 md:h-56 relative shrink-0 bg-white rounded-xl border-2 border-slate-200 overflow-hidden shadow-inner p-4 bg-white/50 backdrop-blur-sm">
+                        <img 
+                            src={imageUrl} 
+                            alt={productName} 
+                            className="w-full h-full object-contain mix-blend-multiply transition-transform group-hover:scale-110 duration-500"
+                        />
+                        <div className="absolute inset-0 shadow-[inset_0_2px_10px_rgba(0,0,0,0.05)] pointer-events-none"></div>
+                    </div>
+                )}
+
                 {/* Product Info */}
                 <div className="flex-1 text-center md:text-left">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-500 text-slate-950 text-[10px] font-black uppercase tracking-widest rounded-sm mb-4">
-                        <Zap className="w-3 h-3 fill-current" /> Melhor Oferta Hoje
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-500 text-slate-950 text-[10px] font-black uppercase tracking-[0.2em] rounded-sm mb-4 shadow-sm">
+                        <Zap className="w-3.5 h-3.5 fill-current" /> Recomendação Especial
                     </div>
-                    <h3 className="text-4xl md:text-5xl font-black font-teko uppercase text-slate-900 leading-none mb-4">
+                    <h3 className="text-3xl md:text-4xl font-black font-teko uppercase text-slate-950 leading-[0.95] mb-4 tracking-tight">
                         {productName}
                     </h3>
                     <div className="flex items-center justify-center md:justify-start gap-3 text-slate-500">
@@ -48,18 +68,18 @@ export function BestOffer({ productName, price, originalPrice, link, store = "Am
                     )}
                     <div className="flex flex-col items-center">
                         <span className="text-[10px] font-black text-slate-900 uppercase tracking-widest mb-1">Por apenas:</span>
-                        <span className="text-5xl font-black text-slate-950 font-teko leading-none mb-2">
+                        <span className="text-3xl font-black text-slate-950 font-teko leading-none mb-2">
                             {price || "Ver Preço"}
                         </span>
                     </div>
 
                     <a
-                        href={link}
+                        href={finalLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full mt-6 py-5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl font-black font-teko text-3xl uppercase tracking-[0.1em] flex items-center justify-center gap-3 transition-all active:scale-95 shadow-[0_10px_0_#b45309] hover:shadow-[0_5px_0_#b45309] hover:translate-y-[5px]"
+                        className="w-full mt-4 py-3 bg-slate-950 hover:bg-slate-900 text-amber-500 rounded-xl font-black font-teko text-2xl uppercase tracking-[0.1em] flex items-center justify-center gap-3 transition-all active:scale-95 shadow-[0_6px_0_rgba(0,0,0,0.3)] hover:translate-y-[2px]"
                     >
-                        Ver na Loja <ExternalLink className="w-6 h-6 border-l-2 border-slate-950/40 pl-1" />
+                        Ver na Loja <ExternalLink className="w-5 h-5 border-l-2 border-amber-500/30 pl-2 ml-2" />
                     </a>
 
                     <span className="mt-6 text-[9px] font-black text-slate-400 uppercase tracking-widest text-center">

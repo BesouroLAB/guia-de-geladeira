@@ -104,7 +104,18 @@ export default function CaminhaoPage() {
                                                 <div className="bg-amber-500 text-slate-950 font-black font-teko text-[10px] px-2 py-0.5 rounded shadow-lg uppercase tracking-widest animate-pulse">🔥 Destaque</div>
                                             )}
                                         </div>
-                                        {/* <Image src={post.image_url} alt={post.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" /> */}
+                                        {post.coverImage ? (
+                                            <Image 
+                                                src={post.coverImage} 
+                                                alt={post.title} 
+                                                fill 
+                                                className="object-contain p-4 group-hover:scale-105 transition-transform duration-500" 
+                                            />
+                                        ) : (
+                                            <div className="w-full h-full flex items-center justify-center text-slate-300">
+                                                <Truck className="w-12 h-12 opacity-20" />
+                                            </div>
+                                        )}
                                     </div>
                                     <div className="p-8 flex-1 flex flex-col justify-between">
                                         <div>

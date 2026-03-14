@@ -23,11 +23,11 @@ export function TechSpecs({ data }: TechSpecsProps) {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
                     {data.map((item, index) => (
-                        <div key={index} className="flex justify-between items-end border-b border-slate-50 pb-2 group">
-                            <span className="text-xs font-bold text-slate-500 uppercase tracking-tight font-display group-hover:text-slate-900 transition-colors">
+                        <div key={index} className="flex flex-col gap-1 p-3 bg-slate-50/50 rounded-lg border border-slate-100 group">
+                            <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest leading-none group-hover:text-blue-600 transition-colors">
                                 {item.label}
                             </span>
-                            <span className="text-sm font-black text-slate-900 font-teko uppercase tracking-wider">
+                            <span className="text-lg font-black text-slate-900 font-teko uppercase tracking-wider leading-none">
                                 {item.value}
                             </span>
                         </div>
